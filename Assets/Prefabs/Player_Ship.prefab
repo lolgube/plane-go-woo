@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028bd784f1d59e047897f74f90c6d277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: {fileID: 0}
-  b: {fileID: 0}
+  a: {fileID: 1618276076}
+  b: {fileID: 1561698728}
   bullet: {fileID: 2536836658375905615, guid: 63a590dee0d885944a793b5f80670091, type: 3}
-  speed: 8
+  speed: 12
 --- !u!50 &6658933788531523385
 Rigidbody2D:
   serializedVersion: 4

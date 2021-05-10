@@ -31,8 +31,8 @@ public class SpaceShip : MonoBehaviour
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")* speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical")* speed));
 
-        // when you press space, shoot (if delay is more than 5)
-        if(Input.GetKey(KeyCode.Space)&&delay > .04){
+        // when you press space, shoot (if delay is more than X)
+        if(Input.GetKey(KeyCode.Space)&&delay > .05){
             Shoot();
         }
 

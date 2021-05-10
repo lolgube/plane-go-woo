@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour {
         if(bulletTimeLeftAlive < 0f){
             Destroy(gameObject);
         }
-        print(bulletTimeLeftAlive);
+        //print(bulletTimeLeftAlive);
     }
 
     // have to define if this is enemy or player bullet

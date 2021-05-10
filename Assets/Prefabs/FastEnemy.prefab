@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8868283559490803420}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000022947786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.00002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8868283559490803422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,16 +109,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.25490654, y: -0.37495315}
-      - {x: -0.034024708, y: -0.08070603}
-      - {x: 0.18629654, y: -0.37712282}
-      - {x: 0.32004726, y: -0.37756768}
-      - {x: 0.31210876, y: -0.12607916}
-      - {x: 0.07838152, y: 0.43397242}
-      - {x: -0.041754037, y: 0.44205034}
-      - {x: -0.15568544, y: 0.4369127}
-      - {x: -0.3751757, y: -0.12817647}
-      - {x: -0.3732478, y: -0.37189412}
+    - - {x: 0.31953698, y: 0.13240194}
+      - {x: 0.1326439, y: -0.3738495}
+      - {x: -0.032892287, y: -0.45142475}
+      - {x: -0.19540069, y: -0.3939184}
+      - {x: -0.29176196, y: -0.15776518}
+      - {x: -0.38052678, y: 0.14379825}
+      - {x: -0.37652934, y: 0.37711403}
+      - {x: -0.24468865, y: 0.3697052}
+      - {x: -0.026624149, y: 0.07223719}
+      - {x: 0.20457318, y: 0.38090608}
+      - {x: 0.3022373, y: 0.3801927}
 --- !u!50 &8868283559490803419
 Rigidbody2D:
   serializedVersion: 4
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 4
+  ySpeed: 8
   canShoot: 0
   fireRate: 0
   health: 6
