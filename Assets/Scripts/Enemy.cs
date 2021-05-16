@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
+    public GameObject bullet;
 
     public float xSpeed;
     public float ySpeed;
@@ -13,13 +14,29 @@ public class Enemy : MonoBehaviour
     public float fireRate;
     public float health;
 
+    public Color bulletColor;
+
+    // shot position
+    public GameObject c;
+
     // gets our rb
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Start() {
-        
+        // destroys the enemy after a certain amount of itme
+        Destroy(gameObject,12);
+
+        // if we can't shoot, piss off
+        if(!canShoot) return;
+            //finds our shooting location
+            c = transform.Find("C").gameObject;
+
+            // randomizes the firerate to either shoot half as slow or half as fast
+            fireRate=fireRate+(Random.Range(fireRate/-2,fireRate/2));
+            // will repeat the funciton called Shoot for firerate seconds every firerate
+            InvokeRepeating("Shoot",fireRate,fireRate);
     }
     
     void Update() {
@@ -52,5 +69,16 @@ public class Enemy : MonoBehaviour
         if(health == 0){
             Die();
         }
+    }
+
+    // spawns a bullet at our c location and flips the direction from the bullet script. 
+    void Shoot(){
+        GameObject temp = (GameObject) Instantiate(bullet,c.transform.position,Quaternion.identity);
+        temp.GetComponent<Bullet>().ChangeDirection();
+
+        // lets us change our instantiated bullets color
+        // fyi you need to change the alpha to be able to see the bullets, unity ain't smart enough 
+        // to do that on its own.
+        temp.GetComponent<Bullet>().ChangeColor(bulletColor);
     }
 }

@@ -10,8 +10,7 @@ public class SpaceShip : MonoBehaviour
     public GameObject bullet;
     Rigidbody2D rb;
     public float speed;
-    int health=4;
-
+    public static int health=4;
 
     private void Awake() {
         // gets our rb
@@ -43,9 +42,13 @@ public class SpaceShip : MonoBehaviour
 
         //okay, this made the calculation a bit different but it should end up being the same
         // maybe i'll have to test this, will i bother tho?
+
+        // it messed with a few things but i patched those up, this should make the shoot speed independent
+        // from fps
         delay += 1f * Time.deltaTime;
 
         //print(delay);
+        //print(health);
     }
 
     // this acts as the player death function

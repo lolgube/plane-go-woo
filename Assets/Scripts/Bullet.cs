@@ -21,6 +21,10 @@ public class Bullet : MonoBehaviour {
         dir*=-1;
     }
 
+    public void ChangeColor(Color col){
+        GetComponent<SpriteRenderer>().color=col;
+    }
+
     // makes our bullet move (*dir means direction, moves down if it's negative)
     void Update() {
         rb.velocity = new Vector2(0,10*dir); 
