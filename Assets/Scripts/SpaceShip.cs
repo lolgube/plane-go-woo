@@ -10,7 +10,7 @@ public class SpaceShip : MonoBehaviour
     public GameObject bullet;
     Rigidbody2D rb;
     public float speed;
-    public static int health=4;
+    public static int health= 8;
 
     private void Awake() {
         // gets our rb

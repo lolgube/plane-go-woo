@@ -163,7 +163,7 @@ MonoBehaviour:
   a: {fileID: 1618276076}
   b: {fileID: 1561698728}
   bullet: {fileID: 2536836658375905615, guid: 63a590dee0d885944a793b5f80670091, type: 3}
-  speed: 12
+  speed: 85
 --- !u!50 &6658933788531523385
 Rigidbody2D:
   serializedVersion: 4
@@ -177,7 +177,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 6
+  m_LinearDrag: 50
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
