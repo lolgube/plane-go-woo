@@ -17,25 +17,36 @@ using TMPro;
 
 public class HealthUI : MonoBehaviour {
     public TMP_Text healthText;
-    private int healthCounter;
+    public int healthCounter;
 
     // this is for the multiple sprite heart thingy
     //public Image[] orbs = new Image[healthArrayLenght];
-    
-    public Sprite fullOrb;
-    public Sprite emptyOrb;
+    public Image[] healthSlots;
+    public Sprite fullHealth;
+    public Sprite emptyHealth;
 
+    private void Awake() {
+        
+    }
     // you can not get a static field to appear in the inspector
     // without some black magic. so now i'm kinda fucked 
-    //[SerializeField] public static int healthArrayLenght;
-
-    private void Start() {
-        
-    }   
+    //[SerializeField] public static int healthArrayLenght; 
 
     void Update() {
         healthCounter = SpaceShip.health;
         healthText.text = "health = " + healthCounter.ToString();
         //print("fuck");
+
+        // the for loop is there to make this run for as much health as we have in the array
+        // every time we check if i is smaller than the amount of health our player has
+        // if it's smaller, then we want the heart to be visible
+        // if it's bigger, we want to hide those hearts. 
+        for (int i = 0; i < healthSlots.Length; i++) {
+            if(i < healthCounter){
+                healthSlots[i].enabled = true;
+            } else {
+                healthSlots[i].enabled = false;
+            }
+        }
     }
 }

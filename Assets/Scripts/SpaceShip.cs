@@ -27,8 +27,25 @@ public class SpaceShip : MonoBehaviour
 
     void Update() {
         //movement times our speed variable
+        // this solution gives us the classic problem of two input buttons at once being pressed
+        // doubbling the movement speed, worth fixing?
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")* speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical")* speed));
+
+        // this solution below seems to work, direction.normalize seems to be what's fixing the issue.
+        // speed values are different, but that'll be fixed manually
+        // update, the code below actaully fucks with the movement pretty hard.
+        // gives a bit of a delay when you stop pressing a button, not good.
+        // yeah, i guess i'll just use the original solution. a shame.
+        
+        /*Vector2 direction = new Vector2(0,0);
+        direction.x = Input.GetAxis("Horizontal");
+        direction.y = Input.GetAxis("Vertical");
+        direction.Normalize();
+        rb.AddForce(direction*speed); */
+
+        // lemme try this - okay this gave the absolute worst result i've seen yet. nice
+        //rb.velocity = rb.velocity.normalized * speed;
 
         // when you press space, shoot (if delay is more than X)
         if(Input.GetKey(KeyCode.Space)&&delay > .05){
@@ -39,16 +56,17 @@ public class SpaceShip : MonoBehaviour
         // am very aware that this is dependant on FPS and will not end up the same on all computers
         // fuck. 
         //delay++;
-
-        //okay, this made the calculation a bit different but it should end up being the same
+        // update 1: okay, this made the calculation a bit different but it should end up being the same
         // maybe i'll have to test this, will i bother tho?
-
-        // it messed with a few things but i patched those up, this should make the shoot speed independent
+        // update 2: it messed with a few things but i patched those up, this should make the shoot speed independent
         // from fps
         delay += 1f * Time.deltaTime;
 
         //print(delay);
         //print(health);
+        if(Input.GetKeyDown(KeyCode.H)){
+            health++;
+        }
     }
 
     // this acts as the player death function
