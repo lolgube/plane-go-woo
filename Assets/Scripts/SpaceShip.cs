@@ -10,7 +10,10 @@ public class SpaceShip : MonoBehaviour
     public GameObject bullet;
     Rigidbody2D rb;
     public float speed;
-    public static int health= 8;
+
+    // this variable is supposed to be set at the main menu (or a scene before it)
+    public static int health = 8;
+    public static int startHealth;
 
     private void Awake() {
         // gets our rb
@@ -22,7 +25,8 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Start() {
-        
+        // just so we can keep an eye on what the value originally was for the score menu
+        startHealth = health;
     }
 
     void Update() {
@@ -32,7 +36,7 @@ public class SpaceShip : MonoBehaviour
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")* speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical")* speed));
 
-        // this solution below seems to work, direction.normalize seems to be what's fixing the issue.
+        // this solution below seems to solve that, direction.normalize seems to be what's fixing the issue.
         // speed values are different, but that'll be fixed manually
         // update, the code below actaully fucks with the movement pretty hard.
         // gives a bit of a delay when you stop pressing a button, not good.
@@ -44,7 +48,7 @@ public class SpaceShip : MonoBehaviour
         direction.Normalize();
         rb.AddForce(direction*speed); */
 
-        // lemme try this - okay this gave the absolute worst result i've seen yet. nice
+        // lemme try this maybe - okay this gave the absolute worst result i've seen yet. nice
         //rb.velocity = rb.velocity.normalized * speed;
 
         // when you press space, shoot (if delay is more than X)
@@ -58,8 +62,8 @@ public class SpaceShip : MonoBehaviour
         //delay++;
         // update 1: okay, this made the calculation a bit different but it should end up being the same
         // maybe i'll have to test this, will i bother tho?
-        // update 2: it messed with a few things but i patched those up, this should make the shoot speed independent
-        // from fps
+        // update 2: it messed with a few things but i patched those up, this should make the
+        // shoot speed independent from fps
         delay += 1f * Time.deltaTime;
 
         //print(delay);
@@ -67,6 +71,9 @@ public class SpaceShip : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.H)){
             health++;
         }
+
+        //print("starthealth = " + startHealth);
+        //print("health = " + health);
     }
 
     // this acts as the player death function
@@ -90,7 +97,5 @@ public class SpaceShip : MonoBehaviour
         // spawn bullet at location A and b
         Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
-
-
     }
 }

@@ -25,12 +25,24 @@ public class HealthUI : MonoBehaviour {
     public Sprite fullHealth;
     public Sprite emptyHealth;
 
-    private void Awake() {
-        
+    private void godHelpMe() {
+        // you can not get a static field to appear in the inspector without some black magic. 
+        // so now i'm kinda fucked 
+        //[SerializeField] public static int healthArrayLenght; 
+
+        // looking into it, arrays can not be "dynamic" in the slightest. 
+        // if i want an array with 20 items at most, that's what it's going to have to be set to.
+        // my best shot is having an array with the max amount of slots, and then creating a new array
+        // of the actual amount of health the player inputs, and then using that instead.
+        // so letting the player choose how much health they start with is a no no since this'll take too long
+
+
+        // i am fucking brain damaged i swear to god.
+        // what the above text is asking is EXCACTLY what our for loop below does.
+        // i just wasted so much time. oh my god
+
+        // at least i learned a bit about arrays i guess..
     }
-    // you can not get a static field to appear in the inspector
-    // without some black magic. so now i'm kinda fucked 
-    //[SerializeField] public static int healthArrayLenght; 
 
     void Update() {
         healthCounter = SpaceShip.health;
@@ -41,6 +53,8 @@ public class HealthUI : MonoBehaviour {
         // every time we check if i is smaller than the amount of health our player has
         // if it's smaller, then we want the heart to be visible
         // if it's bigger, we want to hide those hearts. 
+
+        // in practice it hides the hearts in the array until we have that much health
         for (int i = 0; i < healthSlots.Length; i++) {
             if(i < healthCounter){
                 healthSlots[i].enabled = true;
