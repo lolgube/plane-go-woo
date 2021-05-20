@@ -79,6 +79,8 @@ public class SpaceShip : MonoBehaviour
     // this acts as the player death function
     public void Damage(){
         health--;
+        // ow (turns em red on hit)
+        StartCoroutine(Blink());
             if(health == 0){
                 // boom
                 Instantiate(spaceShipExplosion,transform.position,Quaternion.identity);
@@ -89,6 +91,15 @@ public class SpaceShip : MonoBehaviour
                 // bring up a menu that'll let me restart the scene or go back to the main menu
             }
     }
+    IEnumerator Blink(){
+        // makes our spaceship red (r,g,b)
+        GetComponent<SpriteRenderer>().color=new Color(1,0,0);
+        // waits 0.2f
+        yield return new WaitForSeconds(0.2f);
+        // returns em to normal
+        GetComponent<SpriteRenderer>().color=new Color(1,1,1);
+    }
+
     void Shoot(){
         // resets our delay AKA time since last shot.
         delay = 0;
