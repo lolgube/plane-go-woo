@@ -5,14 +5,17 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
-    public GameObject bullet;
+    public GameObject bullet,explosion;
 
-    public float xSpeed;
-    public float ySpeed;
+    // sets our x and y speed
+    public float xSpeed, ySpeed;
 
     public bool canShoot;
-    public float fireRate;
-    public float health;
+    // sets our firerate and health
+    public float fireRate, health;
+    
+    // how much score our enemies are worth
+    public int score;
 
     public Color bulletColor;
 
@@ -56,10 +59,14 @@ public class Enemy : MonoBehaviour
     }
     
     void Die(){
+            // plays our explosion particle effect
+            Instantiate(explosion,transform.position,Quaternion.identity);
             // die
             Destroy(gameObject);
+            // adds score onto our score variable using playerprefs
+            // playerprefs is handy cause it saves it onto the computer and not just the current session
+            PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+score);
 
-            // play particle effect
             // maybe play a sound?
     }
 

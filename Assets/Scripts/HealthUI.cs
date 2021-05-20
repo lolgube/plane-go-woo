@@ -40,6 +40,7 @@ public class HealthUI : MonoBehaviour {
         // i am fucking brain damaged i swear to god.
         // what the above text is asking is EXCACTLY what our for loop below does.
         // i just wasted so much time. oh my god
+        // i manage to impress myself by doing exactly what i want and then forgetting about it
 
         // at least i learned a bit about arrays i guess..
     }

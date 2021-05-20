@@ -185,10 +185,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2536836658375905615, guid: 63a590dee0d885944a793b5f80670091, type: 3}
+  explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
+    type: 3}
   xSpeed: 0
   ySpeed: 2
   canShoot: 1
   fireRate: 3
   health: 12
+  score: 250
   bulletColor: {r: 1, g: 0.58431375, b: 0, a: 1}
   c: {fileID: 0}

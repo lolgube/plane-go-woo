@@ -7,7 +7,7 @@ public class SpaceShip : MonoBehaviour
     // a and b stand for the places where we instantiate the bullets (cannons)
     public GameObject a,b;
     float delay = 0;
-    public GameObject bullet;
+    public GameObject bullet, spaceShipExplosion;
     Rigidbody2D rb;
     public float speed;
 
@@ -80,9 +80,10 @@ public class SpaceShip : MonoBehaviour
     public void Damage(){
         health--;
             if(health == 0){
+                // boom
+                Instantiate(spaceShipExplosion,transform.position,Quaternion.identity);
                 // die
                 Destroy(gameObject);
-                // play particle effect
                 // maybe play a sound?
                 // show some fail thing for a few seconds
                 // bring up a menu that'll let me restart the scene or go back to the main menu
