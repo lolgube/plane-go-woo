@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
     Rigidbody2D rb;
     // for some reason unity does not give a single fuck about this value
     // it just decides on it's own whatever the fuck this is going to be
+    // not like it affects me, i guess.
     public float bulletTimeLeftAlive = 1.25f;
 
     // to keep track if our bullet is going up or down
