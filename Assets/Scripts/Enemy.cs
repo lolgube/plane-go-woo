@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     void Start() {
         // destroys the enemy after a certain amount of itme
-        Destroy(gameObject,12);
+        Destroy(gameObject,16);
 
         // if we can't shoot, piss off
         if(!canShoot) return;{
@@ -41,8 +41,6 @@ public class Enemy : MonoBehaviour
             // will repeat the function called Shoot for firerate seconds every firerate
             InvokeRepeating("Shoot",fireRate,fireRate);
             }
-        // resets our playerprefs (cause they kinda just stay the same otherwise, and i don't have time to 
-        // fix a good score system)
     }
     
     void Update() {

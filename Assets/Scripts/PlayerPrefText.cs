@@ -6,11 +6,18 @@ using TMPro;
 
 public class PlayerPrefText : MonoBehaviour
 {
-    // why is this here??
-    public string name;
+    // why is this here??  (think it not being here broke something before so just ignore it i guess)
+    public string nameAAAAA;
+
+    public static int score;
 
     // gets our text, sets it as the playerpref "score"
-    void Update() {
-        GetComponent<TMP_Text>().text=PlayerPrefs.GetInt("Score")+"";
+    private void Update() { 
+        // get score
+        score = PlayerPrefs.GetInt("Score");
+
+        // display score, d10 stands for 10 decimals, keeping it old school and cool
+        GetComponent<TMP_Text>().text = score.ToString("D10");
+        //print(score);
     }
 }

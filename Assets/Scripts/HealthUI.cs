@@ -47,7 +47,7 @@ public class HealthUI : MonoBehaviour {
 
     void Update() {
         healthCounter = SpaceShip.health;
-        healthText.text = "health = " + healthCounter.ToString();
+        healthText.text = healthCounter.ToString();
         //print("fuck");
 
         // the for loop is there to make this run for as much health as we have in the array
