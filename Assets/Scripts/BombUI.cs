@@ -5,6 +5,8 @@ using UnityEngine;
 // for whenever i start making bombs (please look at healthUI.cs to get a general idea)
 // just copy things from there
 
+
+// this didn't even get used. ggs
 public class BombUI : MonoBehaviour
 {
     // Start is called before the first frame update

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 // gives our text a cool typewriter effect
 // this is very last minute 
@@ -12,11 +13,11 @@ public class TypewriterText : MonoBehaviour
     public  float textSpeed = 0.1f;
     public string entireText;
     private string currentText = "";
-
     
     // Start is called before the first frame update
     void Start() {
         StartCoroutine(ShowText());
+        StartCoroutine(CutsceneTime());
     }
 
     // Update is called once per frame
@@ -30,5 +31,11 @@ public class TypewriterText : MonoBehaviour
             this.GetComponent<TMP_Text>().text = currentText;
             yield return new WaitForSeconds(textSpeed);
         }
+    }
+
+// after 28 seconds, load the next scene
+    IEnumerator CutsceneTime(){
+        yield return new WaitForSeconds(28);
+        SceneManager.LoadScene(2);
     }
 }
