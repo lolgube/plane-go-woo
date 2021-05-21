@@ -187,11 +187,12 @@ MonoBehaviour:
   bullet: {fileID: 2536836658375905615, guid: 63a590dee0d885944a793b5f80670091, type: 3}
   explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
     type: 3}
+  battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
+  bulletColor: {r: 0.57254905, g: 0.40784314, b: 0.22352941, a: 1}
+  c: {fileID: 0}
   xSpeed: 0
   ySpeed: 1.2
   canShoot: 1
   fireRate: 3
   health: 20
   score: 405
-  bulletColor: {r: 0.57254905, g: 0.40784314, b: 0.22352941, a: 1}
-  c: {fileID: 0}

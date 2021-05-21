@@ -15,6 +15,7 @@ public class ButtonStuff : MonoBehaviour
 
     // simple quit button
     public void Quit() {
+        Debug.Log("quit");
         Application.Quit();
     }
 
@@ -22,5 +23,10 @@ public class ButtonStuff : MonoBehaviour
     public void Skip() {
         Debug.Log ("Skip Cutscene");
         SceneManager.LoadScene(2);
+    }
+
+    // after we die
+    public void Restart(){
+        SceneManager.LoadScene(0);
     }
 }

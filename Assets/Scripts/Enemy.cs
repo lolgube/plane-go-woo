@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
-    public GameObject bullet,explosion;
+    public GameObject bullet,explosion,battery;
     public Color bulletColor;
     // shooting position
     public GameObject c;
@@ -61,6 +61,10 @@ public class Enemy : MonoBehaviour
     }
     
     void Die(){
+            if((int)Random.Range(0,5)==0){
+                Instantiate(battery,transform.position,Quaternion.identity);
+                // one in five chance to spawn battery
+            }
             // plays our explosion particle effect
             Instantiate(explosion,transform.position,Quaternion.identity);
             // die

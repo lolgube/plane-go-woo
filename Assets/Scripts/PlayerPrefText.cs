@@ -7,7 +7,7 @@ using TMPro;
 public class PlayerPrefText : MonoBehaviour
 {
     // why is this here??  (think it not being here broke something before so just ignore it i guess)
-    public string nameAAAAA;
+    //public string name;
 
     public static int score;
 
