@@ -2,21 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// -- made by mohammed
-
 public class BG_Scroll : MonoBehaviour
 {
-    
     public float scrollingSpeed = 4f;
     private Vector3 StartPos;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // our start position is where the image starts, wow!
         StartPos = transform.position;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         // this moves our background downwards. i.e moving down times deltatime times our scroll variable. 

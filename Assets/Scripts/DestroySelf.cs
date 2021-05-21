@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// just to make sure our explosion particle emmiters don't linger after they're done
+
 public class DestroySelf : MonoBehaviour
 {
     // used to remove the explosions after a certain period of time

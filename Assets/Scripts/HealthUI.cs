@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// don't think this is going to stay forever. 
-// it gets our health variable from spaceship.cs
+// this script gets our health variable from spaceship.cs
 // the problem i ran into here was the static thingie, still not really sure what it's about.
 // the solution was to make the variable static in the original script (spaceship.cs)
 
@@ -19,8 +18,9 @@ public class HealthUI : MonoBehaviour {
     public TMP_Text healthText;
     public int healthCounter;
 
-    // this is for the multiple sprite heart thingy
+    // this is for the multiple sprite heart, orb, health thingy
     //public Image[] orbs = new Image[healthArrayLenght];
+    // ^ that is illegal, very illegal.
     public Image[] healthSlots;
     public Sprite fullHealth;
     public Sprite emptyHealth;
@@ -42,7 +42,7 @@ public class HealthUI : MonoBehaviour {
         // i just wasted so much time. oh my god
         // i manage to impress myself by doing exactly what i want and then forgetting about it
 
-        // at least i learned a bit about arrays i guess..
+        // on a positive note at least i learned a bit about arrays.
     }
 
     void Update() {
@@ -55,7 +55,9 @@ public class HealthUI : MonoBehaviour {
         // if it's smaller, then we want the heart to be visible
         // if it's bigger, we want to hide those hearts. 
 
-        // in practice it hides the hearts in the array until we have that much health
+        // in practice, it hides the hearts in the array until we have that much health
+        // potential issue is that the player might get more health than we have in our array
+        // so like, fix that >.>
         for (int i = 0; i < healthSlots.Length; i++) {
             if(i < healthCounter){
                 healthSlots[i].enabled = true;

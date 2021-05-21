@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour {
     // not like it affects me, i guess.
     public float bulletTimeLeftAlive = 1.25f;
 
-    // to keep track if our bullet is going up or down
+    // to keep track of if our bullet is going up or down
     int dir = 1;
 
     // gets our rb
@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour {
         dir*=-1;
     }
 
+    // gets our sprite renderer for bullet colors
     public void ChangeColor(Color col){
         GetComponent<SpriteRenderer>().color=col;
     }
@@ -38,7 +39,6 @@ public class Bullet : MonoBehaviour {
         //print(bulletTimeLeftAlive);
     }
 
-    // have to define if this is enemy or player bullet
     // this is where the bullet collision stuff is
     void OnTriggerEnter2D(Collider2D col){
         

@@ -6,21 +6,17 @@ public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
     public GameObject bullet,explosion;
+    public Color bulletColor;
+    // shooting position
+    public GameObject c;
 
     // sets our x and y speed
     public float xSpeed, ySpeed;
-
     public bool canShoot;
     // sets our firerate and health
     public float fireRate, health;
-    
     // how much score our enemies are worth
     public int score;
-
-    public Color bulletColor;
-
-    // shot position
-    public GameObject c;
 
     // gets our rb
     void Awake() {
@@ -32,14 +28,21 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject,12);
 
         // if we can't shoot, piss off
-        if(!canShoot) return;
+        if(!canShoot) return;{
             //finds our shooting location
             c = transform.Find("C").gameObject;
 
-            // randomizes the firerate to either shoot half as slow or half as fast
+            // randomizes the firerate to either shoot twice as slow or half as fast
+            // i realize now that "half as slow" and "half as fast" don't make much sense.
+            // this is confusing. 
+            // what would you even go about calling /-2..
+            // negative half as fast?
             fireRate=fireRate+(Random.Range(fireRate/-2,fireRate/2));
-            // will repeat the funciton called Shoot for firerate seconds every firerate
+            // will repeat the function called Shoot for firerate seconds every firerate
             InvokeRepeating("Shoot",fireRate,fireRate);
+            }
+        // resets our playerprefs (cause they kinda just stay the same otherwise, and i don't have time to 
+        // fix a good score system)
     }
     
     void Update() {
@@ -54,6 +57,7 @@ public class Enemy : MonoBehaviour
             // enemy collides with player ship, get player collider, 
             // ...get player gameobject, get spaceship script, take damage.
             col.gameObject.GetComponent<SpaceShip>().Damage();
+            // also kill the enemy (they suck)
             Die();
         }
     }
@@ -65,6 +69,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             // adds score onto our score variable using playerprefs
             // playerprefs is handy cause it saves it onto the computer and not just the current session
+            // actually this is dumb and useless, but it works.
             PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+score);
 
             // maybe play a sound?
@@ -84,8 +89,8 @@ public class Enemy : MonoBehaviour
         temp.GetComponent<Bullet>().ChangeDirection();
 
         // lets us change our instantiated bullets color
-        // fyi you need to change the alpha to be able to see the bullets, unity ain't smart enough 
-        // to do that on its own.
+        // fyi you need to change the alpha to be able to see the bullets,  
+        // unity ain't smart enough to do that on its own.
         temp.GetComponent<Bullet>().ChangeColor(bulletColor);
     }
 }

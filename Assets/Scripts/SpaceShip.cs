@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
 {
-    // a and b stand for the places where we instantiate the bullets (cannons)
+    // a and b stand for the places where we instantiate the bullets
     public GameObject a,b;
     float delay = 0;
     public GameObject bullet, spaceShipExplosion;
@@ -12,8 +12,7 @@ public class SpaceShip : MonoBehaviour
     public float speed;
 
     // this variable is supposed to be set at the main menu (or a scene before it)
-    public static int health = 8;
-    public static int startHealth;
+    public static int health = 8, startHealth;
 
     private void Awake() {
         // gets our rb
@@ -25,6 +24,11 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Start() {
+        // resets our score
+        // has to be in this script because the spaceship is there from the start, otherwise it'll be wrong
+        // until an enemy spawns  ^(and not in enenemy.cs)
+        PlayerPrefs.SetInt("Score", 0);
+
         // just so we can keep an eye on what the value originally was for the score menu
         startHealth = health;
     }
@@ -50,6 +54,7 @@ public class SpaceShip : MonoBehaviour
 
         // lemme try this maybe - okay this gave the absolute worst result i've seen yet. nice
         //rb.velocity = rb.velocity.normalized * speed;
+        // i give up. not worth the hassle
 
         // when you press space, shoot (if delay is more than X)
         if(Input.GetKey(KeyCode.Space)&&delay > .05){
@@ -68,6 +73,7 @@ public class SpaceShip : MonoBehaviour
 
         //print(delay);
         //print(health);
+        // debug, might keep it in for luls
         if(Input.GetKeyDown(KeyCode.H)){
             health++;
         }
