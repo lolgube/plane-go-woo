@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 
 // i'm creating another script because the getcomponent will get messy otherwise
-
-public class HighScoreText : MonoBehaviour
+/*
+public class new_HighScoreText : MonoBehaviour
 {
     public static int highscore;
     TMP_Text text;
@@ -16,7 +16,7 @@ public class HighScoreText : MonoBehaviour
         text = GetComponent<TMP_Text>();
         // sets our highscore
         highscore = PlayerPrefs.GetInt ("highscore", highscore);
-        // applies our higscore to the text
+        // applies our higscore to the texxt
         text.text = highscore.ToString("D10");
     }
 
@@ -34,4 +34,13 @@ public class HighScoreText : MonoBehaviour
         // display score, d10 stands for 10 decimals
         //GetComponent<TMP_Text>().text = score.ToString("D10");
     }
+}
+*/
+
+// ok let's go
+
+[System.Serializable]
+public class new_HighScoreText {
+    public static int highscore;
+
 }
