@@ -10,6 +10,8 @@ public class SpaceShip : MonoBehaviour
     public GameObject bullet, spaceShipExplosion;
     Rigidbody2D rb;
     public float speed;
+    AudioManager aM;
+
 
     // this variable is supposed to be set at the main menu (or a scene before it)
     public static int health = 8, startHealth;
@@ -24,6 +26,8 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Start() {
+        aM = FindObjectOfType<AudioManager>();
+
         // resets our score
         // has to be in this script because the spaceship is there from the start, otherwise it'll be wrong
         // until an enemy spawns  ^(and not in enenemy.cs)
@@ -107,6 +111,7 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Shoot(){
+        FindObjectOfType<AudioManager>().Play("Skjut");
         // resets our delay AKA time since last shot.
         delay = 0;
 
