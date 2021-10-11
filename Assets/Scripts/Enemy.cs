@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     public float fireRate, health;
     // how much score our enemies are worth
     public int score;
+    private Vector3 scaleChange, positionChange;
+    int scalingFramesLeft = 0;
+
+
 
     // gets our rb
     void Awake() {
@@ -41,8 +45,10 @@ public class Enemy : MonoBehaviour
             // will repeat the function called Shoot for firerate seconds every firerate
             InvokeRepeating("Shoot",fireRate,fireRate);
             }
+        scaleChange = new Vector2(1f, -0.5f);
+
     }
-    
+
     void Update() {
         // y speed needs to be negative (since it's going down)
         rb.velocity = new Vector2(xSpeed,ySpeed*-1);
@@ -65,10 +71,13 @@ public class Enemy : MonoBehaviour
                 Instantiate(battery,transform.position,Quaternion.identity);
                 // one in six chance to spawn battery
             }
-            // plays our explosion particle effect
-            Instantiate(explosion,transform.position,Quaternion.identity);
+        //transform.localScale += scaleChange;
+        Squish();
+
+        // plays our explosion particle effect
+        Instantiate(explosion,transform.position,Quaternion.identity);
             // die
-            Destroy(gameObject);
+            //Destroy(gameObject);
             // adds score onto our score variable using playerprefs
             // playerprefs is handy cause it saves it onto the computer and not just the current session
             // actually this is dumb and useless, but it works.
@@ -94,5 +103,11 @@ public class Enemy : MonoBehaviour
         // fyi you need to change the alpha to be able to see the bullets,  
         // unity ain't smart enough to do that on its own.
         temp.GetComponent<Bullet>().ChangeColor(bulletColor);
+    }
+    void Squish()
+    {
+        transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * 2, Time.deltaTime * 10);
+        scalingFramesLeft--;
+
     }
 }
