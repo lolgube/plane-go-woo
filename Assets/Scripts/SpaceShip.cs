@@ -16,6 +16,9 @@ public class SpaceShip : MonoBehaviour
     // this variable is supposed to be set at the main menu (or a scene before it)
     public static int health = 8, startHealth;
 
+    // p-score testing
+    public static int PScore = 0; 
+
     private void Awake() {
         // gets our rb
         rb = GetComponent<Rigidbody2D>();
