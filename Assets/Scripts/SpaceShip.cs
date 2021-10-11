@@ -94,11 +94,16 @@ public class SpaceShip : MonoBehaviour
             if(health == 0){
                 // boom
                 Instantiate(spaceShipExplosion,transform.position,Quaternion.identity);
+                // add sound here typ
                 // die
                 Destroy(gameObject);
+                
                 // maybe play a sound?
                 // show some fail thing for a few seconds
                 // bring up a menu that'll let me restart the scene or go back to the main menu
+
+                //yield return new WaitForSeconds(4);
+                //health = 8;
             }
     }
     IEnumerator Blink(){

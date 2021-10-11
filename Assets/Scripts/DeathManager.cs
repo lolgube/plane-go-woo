@@ -30,6 +30,7 @@ public class DeathManager : MonoBehaviour
     // once we lose, load the lose screen after 3s
     IEnumerator LoadGameOver(){
         yield return new WaitForSeconds(3f);
+        SpaceShip.health = 8;
         SceneManager.LoadScene(3);
     }
 }

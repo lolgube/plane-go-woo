@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
     void Die(){
             if((int)Random.Range(0,5)==0){
                 Instantiate(battery,transform.position,Quaternion.identity);
-                // one in five chance to spawn battery
+                // one in six chance to spawn battery
             }
             // plays our explosion particle effect
             Instantiate(explosion,transform.position,Quaternion.identity);
