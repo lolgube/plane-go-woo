@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossMovement : MonoBehaviour
 {
+    public Rigidbody bossrb;
+    public GameObject bossLady;
     // Start is called before the first frame update
     void Start()
     {
