@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BossMovement : MonoBehaviour
 {
-    public Rigidbody bossrb;
+    public Rigidbody2D bossrb;
     public GameObject bossLady;
+    public float bossYPosition;
+    public float bossXPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +18,11 @@ public class BossMovement : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    void FixedUpdate()
+    {
+        //bossrb.AddForce( , 0);
     }
 }
