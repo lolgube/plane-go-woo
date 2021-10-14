@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
 {
+    
     // a and b stand for the places where we instantiate the bullets
     public GameObject a,b;
     float delay = 0;
@@ -17,7 +18,9 @@ public class SpaceShip : MonoBehaviour
     public static int health = 4, startHealth;
 
     // p-score testing
-    public static int PScore = 0; 
+    public static int PScore = 0;
+    //cameraShake script -ALfred
+    public cameraShake cameraShake;
 
     private void Awake() {
         // gets our rb
@@ -94,7 +97,8 @@ public class SpaceShip : MonoBehaviour
         health--;
         // ow (turns em red on hit)
         StartCoroutine(Blink());
-            if(health == 0){
+            if(health == 0)
+        {
                 // boom
                 Instantiate(spaceShipExplosion,transform.position,Quaternion.identity);
                 // add sound here typ
@@ -108,6 +112,9 @@ public class SpaceShip : MonoBehaviour
                 //yield return new WaitForSeconds(4);
                 //health = 4;
             }
+        //ow (camera shakes on hit) -Alfred
+       Debug.Log("shake it off");
+        cameraShake.Shake();
     }
     IEnumerator Blink(){
         // makes our spaceship red (r,g,b)
