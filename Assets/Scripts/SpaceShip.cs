@@ -112,9 +112,8 @@ public class SpaceShip : MonoBehaviour
                 //yield return new WaitForSeconds(4);
                 //health = 4;
             }
-        //ow (camera shakes on hit) -Alfred
-       Debug.Log("shake it off");
-        cameraShake.Shake();
+        //funktion för att få kamerand att skaka 0,2 sekunder -Alfred
+        cameraShake.Shake(0.2f);
     }
     IEnumerator Blink(){
         // makes our spaceship red (r,g,b)

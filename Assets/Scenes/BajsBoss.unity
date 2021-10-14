@@ -350,11 +350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586e400b62b059b41a303729f73f9a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frekvens: {x: 71.8, y: 28.8}
+  frekvens: {x: 71, y: 28}
   amplitude: {x: 0.2, y: 0.1}
   shouldShake: 0
   timer: 0
-  cam: {fileID: 519420031}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
