@@ -10,6 +10,7 @@ public class BossEnemy : MonoBehaviour
     public float bossHealth;
     // how much score our enemies are worth
     public int bossScore;
+    Rigidbody2D rb;
 
 
     // if collission with player
