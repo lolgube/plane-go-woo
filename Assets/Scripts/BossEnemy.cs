@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
-    Rigidbody2D rb;
     public GameObject explosion,battery;
 
     // sets our firerate and health
