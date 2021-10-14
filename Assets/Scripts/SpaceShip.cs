@@ -14,7 +14,7 @@ public class SpaceShip : MonoBehaviour
 
 
     // this variable is supposed to be set at the main menu (or a scene before it)
-    public static int health = 8, startHealth;
+    public static int health = 4, startHealth;
 
     // p-score testing
     public static int PScore = 0; 
@@ -106,7 +106,7 @@ public class SpaceShip : MonoBehaviour
                 // bring up a menu that'll let me restart the scene or go back to the main menu
 
                 //yield return new WaitForSeconds(4);
-                //health = 8;
+                //health = 4;
             }
     }
     IEnumerator Blink(){
@@ -119,11 +119,12 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Shoot(){
+        //play a sound here
         FindObjectOfType<AudioManager>().Play("Skjut");
+
         // resets our delay AKA time since last shot.
         delay = 0;
 
-        //play a sound here
 
         // spawn bullet at location A and b
         Instantiate(bullet, a.transform.position, Quaternion.identity);
