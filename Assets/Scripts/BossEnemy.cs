@@ -11,18 +11,6 @@ public class BossEnemy : MonoBehaviour
     // how much score our enemies are worth
     public int bossScore;
 
-    // gets our rb
-    void Awake() {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    void Start() {
-
-    }
-
-    void Update() {
-
-    }
 
     // if collission with player
     private void OnCollisionEnter2D(Collision2D col){
