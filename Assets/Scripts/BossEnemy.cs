@@ -12,8 +12,6 @@ public class BossEnemy : MonoBehaviour
     // how much score our enemies are worth
     public int bossScore;
 
-
-
     // gets our rb
     void Awake() {
         rb = GetComponent<Rigidbody2D>();

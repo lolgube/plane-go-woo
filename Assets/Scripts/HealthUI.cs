@@ -25,7 +25,7 @@ public class HealthUI : MonoBehaviour {
     public Sprite fullHealth;
     public Sprite emptyHealth;
 
-    private void godHelpMe() {
+    //private void godHelpMe() {
         // you can not get a static field to appear in the inspector without some black magic. 
         // so now i'm kinda fucked 
         //[SerializeField] public static int healthArrayLenght; 
@@ -43,7 +43,7 @@ public class HealthUI : MonoBehaviour {
         // i manage to impress myself by doing exactly what i want and then forgetting about it
 
         // on a positive note at least i learned a bit about arrays.
-    }
+    //}
 
     void Update() {
         healthCounter = SpaceShip.health;
