@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// all this script does is make sure the prefab functionality works fine
+
 public class PScore : MonoBehaviour
 {
-    
     AudioManager aM;
-
-    // will this p-score max your score out or give a little bit? 
+    [SerializeField]
     bool isThisAMaxItem;
     int pscoreWorth;
-    int pScoreMaxOut;
+    // p-scoreMaxOut puts your p-score at the highest, could be a useful drop.
+    int pScoreMaxOut = 100;
 
     private void Start() {
         aM = FindObjectOfType<AudioManager>();
+        Mathf.Clamp(pscoreWorth, 0, 100);
     }
     // if collide, give player pscore and then go away
     private void OnTriggerEnter2D(Collider2D col) {
@@ -28,6 +31,9 @@ public class PScore : MonoBehaviour
             // adds our randomized worth
             SpaceShip.PScore += pscoreWorth;
             Destroy(gameObject);
+            if(isThisAMaxItem == true){
+                SpaceShip.PScore += pScoreMaxOut;
+            }
         }
     }
 
