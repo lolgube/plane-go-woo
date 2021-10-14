@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds; // det här är en lista som ska inehålla ljudfiler från det andra scriptet som heter sound, Johan.
+    public Sound[] sounds; // det här är en lista som ska inehålla ljudfiler från sound scriptet - Marcus.
 
     // Start is called before the first frame update
     void Awake()
@@ -20,10 +20,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Play(string name) // Denna funktion är gjord så att när man kallar det så skriver man namnet på ljudfilen i arrayn som finns i detta skript nså spelas det ljudet, Johan.
+    public void Play(string name) //Denna funktion spelar upp ljudfiler - Marcus
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        s.source.Play();
+        s.source.Play(); 
     }
 
 }

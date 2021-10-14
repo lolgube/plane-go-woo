@@ -17,8 +17,8 @@ public class Enemy : MonoBehaviour
     public float fireRate, health;
     // how much score our enemies are worth
     public int score;
-    private Vector3 scaleChange, positionChange;
-    int scalingFramesLeft = 0;
+    
+    
 
 
 
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
             // will repeat the function called Shoot for firerate seconds every firerate
             InvokeRepeating("Shoot",fireRate,fireRate);
             }
-        scaleChange = new Vector2(1f, -0.5f);
+        
 
     }
 
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         // plays our explosion particle effect
         Instantiate(explosion,transform.position,Quaternion.identity);
             // die
-            //Destroy(gameObject);
+            Destroy(gameObject);
             // adds score onto our score variable using playerprefs
             // playerprefs is handy cause it saves it onto the computer and not just the current session
             // actually this is dumb and useless, but it works.
@@ -106,8 +106,6 @@ public class Enemy : MonoBehaviour
     }
     void Squish()
     {
-        transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * 2, Time.deltaTime * 10);
-        scalingFramesLeft--;
 
     }
 }
