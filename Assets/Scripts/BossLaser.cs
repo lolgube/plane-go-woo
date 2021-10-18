@@ -8,19 +8,11 @@ public class BossLaser : MonoBehaviour
 
 
     //Creates array for x position
-    float[] laserPositionX = new float[2];
+    public int[] laserPositionX;
 
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //If you collide with the laser wall
-        if(collision.gameObject.tag == "Player")
-        {
-            //The player takes damage
-            collision.gameObject.GetComponent<SpaceShip>().Damage();
-        }
-    }
+    
 
     // Start is called before the first frame update
     void Start()
@@ -41,14 +33,8 @@ public class BossLaser : MonoBehaviour
     //Method for the laser attack
     public void BossLazerAttack()
     {
-        //Chooses randomly which of the three positions the laser will spawn
-        laserWall.transform.position = new Vector2(laserPositionX[Random.Range(0,2)], 10);
+        //Spans laserwallattack randomly in one of three positions
+        Instantiate(laserWall, new Vector2(laserPositionX[Random.Range(0, 3)], 20), Quaternion.identity);
+    }
 
-        
-    }
-    //Makes the laser go down
-    public void BossLaserGoDown()
-    {
-        
-    }
 }

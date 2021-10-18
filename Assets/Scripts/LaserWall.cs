@@ -5,6 +5,17 @@ using UnityEngine;
 public class LaserWall : MonoBehaviour
 {
     public Rigidbody2D laserWallRB;
+    public BoxCollider2D laserWallCollider;
+    private void OnCollisionEnter(Collision collision)
+    {
+        //If you collide with the laser wall
+        if (collision.gameObject.tag == "Player")
+        {
+            //The player takes damage
+            collision.gameObject.GetComponent<SpaceShip>().Damage();
+            laserWallCollider.enabled = false;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
