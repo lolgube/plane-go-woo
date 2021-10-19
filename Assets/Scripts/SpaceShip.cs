@@ -87,6 +87,7 @@ public class SpaceShip : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.H)){
             health++;
         }
+        
 
         //print("starthealth = " + startHealth);
         //print("health = " + health);
@@ -136,4 +137,6 @@ public class SpaceShip : MonoBehaviour
         Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
     }
+    
+    
 }

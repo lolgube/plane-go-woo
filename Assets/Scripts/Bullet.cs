@@ -46,6 +46,7 @@ public class Bullet : MonoBehaviour {
         if(dir==1){
             if(col.gameObject.tag=="Enemy"){
                 col.gameObject.GetComponent<Enemy>().Damage();
+                
             
                 // add sound or particle effect (or something) here
 

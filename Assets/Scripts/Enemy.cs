@@ -106,6 +106,6 @@ public class Enemy : MonoBehaviour
     }
     void Squish()
     {
-
+        
     }
 }
