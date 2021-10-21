@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 444845414}
   - component: {fileID: 444845411}
   - component: {fileID: 444845415}
-  - component: {fileID: 444845410}
+  - component: {fileID: 2807025323376325283}
   m_Layer: 9
   m_Name: Boss
   m_TagString: BossEnemy
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &444845410
+--- !u!114 &2807025323376325283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,9 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
-  explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
-    type: 3}
-  battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
+  explosion: {fileID: 0}
+  battery: {fileID: 0}
   bulletColor: {r: 0, g: 0, b: 0, a: 0}
   c: {fileID: 0}
   xSpeed: 0
@@ -274,8 +273,9 @@ MonoBehaviour:
   ySpeed: 0
   canShoot: 0
   fireRate: 0
-  health: 500
+  health: 1500
   score: 1
+  IsBossEnemy: 1
 --- !u!50 &6404310965994955350
 Rigidbody2D:
   serializedVersion: 4
