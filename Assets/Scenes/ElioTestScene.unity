@@ -323,6 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserWall: {fileID: 111275203596484797, guid: f03859972c66ecd41b87c30c2f68646c,
     type: 3}
+  attackWarning: {fileID: 5017260635409149099, guid: 7fc86b67fbd96ec45a5f8fb7191e2fff,
+    type: 3}
   laserPositionX: f5ffffff000000000b000000
 --- !u!4 &4034160229721435709
 Transform:
