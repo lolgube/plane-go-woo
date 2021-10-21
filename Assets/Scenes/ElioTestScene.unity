@@ -325,7 +325,12 @@ MonoBehaviour:
     type: 3}
   attackWarning: {fileID: 5017260635409149099, guid: 7fc86b67fbd96ec45a5f8fb7191e2fff,
     type: 3}
-  laserPositionX: f5ffffff000000000b000000
+  wallXPositionRandom: 0
+  spawningAttack: 0
+  laserPositionX:
+  - -11
+  - 0
+  - 11
 --- !u!4 &4034160229721435709
 Transform:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class LaserWall : MonoBehaviour
         Debug.Log("Frame");
         laserWallRB.AddForce(new Vector2(0,-10));
 
-        //
-        Destroy(gameObject, 32);
+
+        Destroy(gameObject, 2);
     }
 }
