@@ -3479,6 +3479,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2033934058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4828790253475842759, guid: ab3010d407f405042a1d201f9e54d572,
+    type: 3}
+  m_PrefabInstance: {fileID: 6658933789784615718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2114664520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3816,6 +3822,11 @@ PrefabInstance:
       propertyPath: cameraShake
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 6658933788531523387, guid: ab3010d407f405042a1d201f9e54d572,
+        type: 3}
+      propertyPath: spaceShipExplosion
+      value: 
+      objectReference: {fileID: 2033934058}
     - target: {fileID: 6658933788531523388, guid: ab3010d407f405042a1d201f9e54d572,
         type: 3}
       propertyPath: m_Name

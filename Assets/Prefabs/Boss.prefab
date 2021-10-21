@@ -267,6 +267,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   explosion: {fileID: 0}
   battery: {fileID: 0}
+  pscore: {fileID: 0}
   bulletColor: {r: 0, g: 0, b: 0, a: 0}
   c: {fileID: 0}
   xSpeed: 0
