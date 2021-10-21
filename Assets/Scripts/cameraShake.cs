@@ -5,23 +5,23 @@ using UnityEngine;
 public class cameraShake : MonoBehaviour
 {
     //hur snabbt kameran ska skaka i x respektive y led -Alfred
-    public Vector2 frekvens;
+    private Vector2 frekvens;
     //hur långt kameran ska röra sig när den skakar i x respektive y led -Alfred
-    public Vector2 amplitude;
+    private Vector2 amplitude;
     //hur länge den skakar med frekvensen -Alfred
     Vector2 time;
     //bool som kollar om man ska skaka -Alfred
-    public bool shouldShake;
+    private bool shouldShake;
     //timer för hur länge man ska skaka -Alfred
-    public float timer;
+    float timer;
 
     private void Update()
     {
         //positionen för objektet som ska skaka -Alfred
         Vector3 shakePos = transform.localPosition;
         //multipliserar frekvensen med tid så man kan få den att skaka
-        time.x += Time.deltaTime * frekvens.x;
-        time.y += Time.deltaTime * frekvens.y;
+        time.x += Time.deltaTime * 71;
+        time.y += Time.deltaTime * 28;
 
         timer -= Time.deltaTime;
 
@@ -35,7 +35,7 @@ public class cameraShake : MonoBehaviour
         }
         if (shouldShake == true)
         {
-            shakePos = new Vector3(Mathf.Sin(time.x) * amplitude.x, Mathf.Sin(time.y) * amplitude.y, 0);
+            shakePos = new Vector3(Mathf.Sin(time.x) * 0.2f, Mathf.Sin(time.y) * 0.1f, 0);
         }
         if (shouldShake == false)
         {
