@@ -3668,6 +3668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 206295183439237810, guid: 292458ae87c6f4745896035a394622ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7646562290826355422, guid: 292458ae87c6f4745896035a394622ba,
         type: 3}
       propertyPath: m_RootOrder
@@ -3862,6 +3867,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player_Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658933788531523389, guid: ab3010d407f405042a1d201f9e54d572,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658933788531523389, guid: ab3010d407f405042a1d201f9e54d572,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7476659923796401499, guid: ab3010d407f405042a1d201f9e54d572,
         type: 3}
