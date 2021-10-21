@@ -77,7 +77,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6067317089685826563
 Transform:
   m_ObjectHideFlags: 0
@@ -85,13 +85,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4828790253475842759}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.81, z: -0}
+  m_LocalScale: {x: 0.34, y: 1, z: 4.3}
   m_Children: []
   m_Father: {fileID: 6658933788531523386}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!198 &7476659923796401499
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -280,9 +280,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 0, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.9704633, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -344,7 +344,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 9.27
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4894,7 +4894,7 @@ Transform:
   m_GameObject: {fileID: 6658933788531523388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9404, y: 1.9404, z: 1.9404}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1618276077}
   - {fileID: 1561698729}
@@ -4968,8 +4968,9 @@ MonoBehaviour:
   a: {fileID: 1618276076}
   b: {fileID: 1561698728}
   bullet: {fileID: 2536836658375905615, guid: 63a590dee0d885944a793b5f80670091, type: 3}
-  spaceShipExplosion: {fileID: 0}
-  speed: 85
+  spaceShipExplosion: {fileID: 5978069263699004831, guid: 578500f1847ed4847b9751a1b079b465,
+    type: 3}
+  speed: 75
   cameraShake: {fileID: 0}
 --- !u!50 &6658933788531523385
 Rigidbody2D:
@@ -5008,7 +5009,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.50535905, y: 0.5214362}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -5017,15 +5018,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.24979788, y: 0.020266056}
-      - {x: 0.07927606, y: 0.20242143}
-      - {x: -0.09280281, y: 0.20737791}
-      - {x: -0.27933386, y: 0.018628597}
-      - {x: -0.18009096, y: -0.09442425}
-      - {x: -0.13584773, y: -0.15062857}
-      - {x: 0.002986353, y: -0.20220637}
-      - {x: 0.1233207, y: -0.15797162}
-      - {x: 0.16285218, y: -0.09494233}
+    - - {x: 0.24275021, y: -0.029067874}
+      - {x: 0.11451455, y: 0.14075398}
+      - {x: -0.101612434, y: 0.1369009}
+      - {x: -0.24057151, y: -0.032467127}
+      - {x: -0.14837633, y: -0.027471066}
+      - {x: -0.10589503, y: -0.08191359}
+      - {x: -0.0005374951, y: -0.2163018}
+      - {x: 0.07751067, y: -0.11392355}
+      - {x: 0.12585178, y: -0.038560748}
 --- !u!95 &9074229726650087051
 Animator:
   serializedVersion: 3

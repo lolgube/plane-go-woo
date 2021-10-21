@@ -16,7 +16,7 @@ public class PScore : MonoBehaviour
 
     private void Start() {
         aM = FindObjectOfType<AudioManager>();
-        Mathf.Clamp(pscoreWorth, 0, 100);
+        pscoreWorth = Mathf.Clamp(pscoreWorth, 0, 100);
     }
     // if collide, give player pscore and then go away
     private void OnTriggerEnter2D(Collider2D col) {
@@ -28,12 +28,21 @@ public class PScore : MonoBehaviour
 
             // randomizes our worth
             pScoreRandomizeWorth();
-            // adds our randomized worth
-            SpaceShip.PScore += pscoreWorth;
-            Destroy(gameObject);
+
+            // special case for if this is a max item, trying to make it put your score to "full"
             if(isThisAMaxItem == true){
                 SpaceShip.PScore += pScoreMaxOut;
+                // clamps our value to 100
+                SpaceShip.PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
+                Destroy(gameObject);
+            }else{
+                // adds our randomized worth
+                SpaceShip.PScore += pscoreWorth;
+                // clamps our value to 100
+                SpaceShip.PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
+                Destroy(gameObject);
             }
+            
         }
     }
 
