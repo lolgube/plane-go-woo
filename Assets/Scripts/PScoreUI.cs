@@ -8,15 +8,16 @@ using TMPro;
 public class PScoreUI : MonoBehaviour
 {
     // if i was smarter i'd just put this in the pscore script 
+    // but it's easier to find it this way so who cares
+
     private void Update() { 
         //print(score);
-//        if(SpaceShip.PScore >= 100){
-//            GetComponent<TMP_Text>().text = "Power: FULL"; 
-//        }else{
-        // display score
+        // fancy thing that replaces 100 with the text "FULL"
+        if(SpaceShip.PScore >= 100){
+            GetComponent<TMP_Text>().text = "Power: FULL"; 
+        }else{
+        // displays our normal score
         GetComponent<TMP_Text>().text = "Power: " + SpaceShip.PScore.ToString();
-//        }
-
-// MAKE SURE TO REMOVE THE // WHEN ACTUALLY PUSHING, THIS IS JUST FOR DEV RN
+        }
     }
 }

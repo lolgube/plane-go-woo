@@ -26,10 +26,10 @@ public class PScore : MonoBehaviour
             //////////////////////////////////////////////////
             FindObjectOfType<AudioManager>().Play("Health pickup");
 
-            // randomizes our worth
+            // randomizes small p-score thingie worth
             pScoreRandomizeWorth();
 
-            // special case for if this is a max item, trying to make it put your score to "full"
+            // special case for if this is a max item, maxes out your score to fullz
             if(isThisAMaxItem == true){
                 SpaceShip.PScore += pScoreMaxOut;
                 // clamps our value to 100
