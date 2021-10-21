@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: cb15b313c2e99604ea573430c216c925
+guid: a98c4702fef364a40938d537b5b6880c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4807895455276787439
-    second: Boss death_0
+      213: 2742915689779771889
+    second: bossman go angry (2)_0
   - first:
-      213: -898319769442773741
-    second: Boss death_1
+      213: -4048901902307807168
+    second: bossman go angry (2)_1
   - first:
-      213: 1728411899462392552
-    second: Boss death_2
-  - first:
-      213: 5231566258893805235
-    second: Boss death_3
-  - first:
-      213: 2207414741068825651
-    second: Boss death_4
-  - first:
-      213: -7564247834206615153
-    second: Boss death_5
-  - first:
-      213: 5063463794391385763
-    second: Boss death_6
-  - first:
-      213: -4359060407360467923
-    second: Boss death_7
+      213: 6254762069012844944
+    second: bossman go angry (2)_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -65,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -91,8 +76,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,8 +88,8 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,11 +97,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,7 +110,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bossman go angry (2)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426.6667
+        width: 300
+        height: 213.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f93b2a894bc01620800000000000000
+      internalID: 2742915689779771889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossman go angry (2)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 213.66667
+        width: 300
+        height: 213.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0403a8efb296fc7c0800000000000000
+      internalID: -4048901902307807168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossman go angry (2)_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 300
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091191e66f06dc650800000000000000
+      internalID: 6254762069012844944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

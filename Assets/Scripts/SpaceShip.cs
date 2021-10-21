@@ -87,6 +87,11 @@ public class SpaceShip : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.H)){
             health++;
         }
+        // also debug, keeping it in for the moment
+        if(Input.GetKeyDown(KeyCode.J)){
+            PScore += 5;
+            PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
+        }
         
 
         //print("starthealth = " + startHealth);

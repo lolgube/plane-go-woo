@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
-    public GameObject bullet,explosion,battery;
+    // first two are self explanatory, latter 2 are health drops and power-up-drops 
+    public GameObject bullet,explosion,battery,pscore;
     public Color bulletColor;
     // shooting position
     public GameObject c;
@@ -67,10 +68,15 @@ public class Enemy : MonoBehaviour
     }
     
     void Die(){
-            if((int)Random.Range(0,5)==0){
-                Instantiate(battery,transform.position,Quaternion.identity);
-                // one in six chance to spawn battery
-            }
+        if((int)Random.Range(0,6)==0){
+            Instantiate(battery,transform.position,Quaternion.identity);
+            // one in 7  chance to spawn battery
+        }
+        if((int)Random.Range(0,3)==0){
+            // one in 4 (maybe change?) chance to spawn p-score (just the tiny one)
+            Instantiate(pscore,transform.position,Quaternion.identity);
+        }
+
         //transform.localScale += scaleChange;
         Squish();
 
