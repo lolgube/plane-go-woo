@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class cameraShake : MonoBehaviour
 {
-    //hur snabbt kameran ska skaka i x respektive y led -Alfred
-    private Vector2 frekvens;
-    //hur långt kameran ska röra sig när den skakar i x respektive y led -Alfred
-    private Vector2 amplitude;
     //hur länge den skakar med frekvensen -Alfred
     Vector2 time;
     //bool som kollar om man ska skaka -Alfred

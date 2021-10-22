@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
     public float fireRate, health;
     // how much score our enemies are worth
     public int score;
-    public bool IsBossEnemy;
     
 
 
@@ -46,10 +45,7 @@ public class Enemy : MonoBehaviour
             // will repeat the function called Shoot for firerate seconds every firerate
             InvokeRepeating("Shoot",fireRate,fireRate);
             }
-        if(health <= 1000)
-        {
-            IsBossEnemy = true;
-        }
+  
         
 
     }
@@ -62,11 +58,7 @@ public class Enemy : MonoBehaviour
     // if collission with player
     private void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag=="Player"){
-            if(IsBossEnemy == true)
-            {
-                return;
-            }
-
+         
             // enemy collides with player ship, get player collider, 
             // ...get player gameobject, get spaceship script, take damage.
             col.gameObject.GetComponent<SpaceShip>().Damage();
