@@ -154,7 +154,7 @@ public class SpaceShip : MonoBehaviour
         // resets our delay AKA time since last shot.
         delay = 0;
 
-        // how i want the bullet system to work (maths)
+        // how i want the bullet system to work
         // see image, https://i.imgur.com/fuXgFn4.png
         // actually adding one more lazer to 100 since it's going to be annoying otherwise
         // if pewpew is full, shoot bambam (something special, otherwise just 4 lasers cause i'm lazy lmao)
