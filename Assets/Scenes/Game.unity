@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 53240441}
   - component: {fileID: 53240440}
   - component: {fileID: 53240439}
+  - component: {fileID: 53240442}
   m_Layer: 5
   m_Name: PscoreText
   m_TagString: Untagged
@@ -271,6 +272,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53240437}
   m_CullTransparentMesh: 1
+--- !u!223 &53240442
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53240437}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 1488140017
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &240048891
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,12 +356,12 @@ PrefabInstance:
     - target: {fileID: 4845234283028852806, guid: 5d1006699e258ca4884bb70e62b3996e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.029844
+      value: 5.44
       objectReference: {fileID: 0}
     - target: {fileID: 4845234283028852806, guid: 5d1006699e258ca4884bb70e62b3996e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5366
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4845234283028852806, guid: 5d1006699e258ca4884bb70e62b3996e,
         type: 3}
@@ -1095,6 +1117,7 @@ GameObject:
   - component: {fileID: 898850105}
   - component: {fileID: 898850107}
   - component: {fileID: 898850106}
+  - component: {fileID: 898850108}
   m_Layer: 5
   m_Name: temp_press h to get hp text
   m_TagString: Untagged
@@ -1222,6 +1245,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898850104}
   m_CullTransparentMesh: 0
+--- !u!223 &898850108
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898850104}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 1488140017
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &976446507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,12 +2651,12 @@ PrefabInstance:
     - target: {fileID: 4845234283028852806, guid: 1a81d14da6b99354387ba8f1212e654e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.79
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 4845234283028852806, guid: 1a81d14da6b99354387ba8f1212e654e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.31
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 4845234283028852806, guid: 1a81d14da6b99354387ba8f1212e654e,
         type: 3}
@@ -3659,12 +3703,12 @@ PrefabInstance:
     - target: {fileID: 4072701444502729621, guid: 1665c08a2867f4b4d9840c2e734bf844,
         type: 3}
       propertyPath: waves
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4072701444502729621, guid: 1665c08a2867f4b4d9840c2e734bf844,
         type: 3}
       propertyPath: enemies.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4072701444502729621, guid: 1665c08a2867f4b4d9840c2e734bf844,
         type: 3}
@@ -3683,6 +3727,12 @@ PrefabInstance:
       propertyPath: enemies.Array.data[3]
       value: 
       objectReference: {fileID: 7303027210360065128, guid: a34deb26dc4f8c94dbed70c3f2b79a1c,
+        type: 3}
+    - target: {fileID: 4072701444502729621, guid: 1665c08a2867f4b4d9840c2e734bf844,
+        type: 3}
+      propertyPath: enemies.Array.data[4]
+      value: 
+      objectReference: {fileID: 7303027210360065128, guid: 14e2c96264cd8c149973415b001942f0,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1665c08a2867f4b4d9840c2e734bf844, type: 3}

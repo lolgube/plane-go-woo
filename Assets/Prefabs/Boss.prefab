@@ -156,9 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831963fa497e19849ab10530ae304fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  explosion: {fileID: 0}
-  battery: {fileID: 0}
+  bullet: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41, type: 3}
+  explosion: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41,
+    type: 3}
+  battery: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41, type: 3}
   bulletColor: {r: 0, g: 0, b: 0, a: 0}
   c: {fileID: 0}
   xSpeed: 0
@@ -265,9 +266,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
-  explosion: {fileID: 0}
-  battery: {fileID: 0}
-  pscore: {fileID: 0}
+  explosion: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41,
+    type: 3}
+  battery: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41, type: 3}
+  pscore: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41, type: 3}
   bulletColor: {r: 0, g: 0, b: 0, a: 0}
   c: {fileID: 0}
   xSpeed: 0
@@ -276,7 +278,6 @@ MonoBehaviour:
   fireRate: 0
   health: 1500
   score: 1
-  IsBossEnemy: 1
 --- !u!50 &6404310965994955350
 Rigidbody2D:
   serializedVersion: 4
