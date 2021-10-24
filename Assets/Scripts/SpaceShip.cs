@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
 {
-    
-    // a and b stand for the places where we instantiate the bullets
-    public GameObject a,b;
+    // these gameobjects stand for the places where we instantiate the bullets
+    // see link https://i.imgur.com/wcJhsWM.png for context
+    // level 1 and 3 is middle thingie
+    // 2&3&4 A - B are the outer most shoot canons. 4A and 4B are the two middle-outer-canons. 
+    // i'm sorry for being so shit at naming stuff. - mohammed
+    // fyi to stop the header from appearing under every single gameobject we're splitting them up like that.
+    [Header("These are all the gun-spawn-places")]
+    public GameObject level1and3;
+    public GameObject level2and3and4A,level2and3and4B,level4A, level4B;
+
     float delay = 0;
-    public GameObject bullet, spaceShipExplosion;
+    [Header("Here's the rest of our stuff.")]
+    public GameObject bullet; 
+    public GameObject spaceShipExplosion;
     Rigidbody2D rb;
     public float speed;
     AudioManager aM;
@@ -27,8 +36,13 @@ public class SpaceShip : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         // finds the location of our cannons (bullet spawnpoints)
-        a = transform.Find("a").gameObject;
-        b = transform.Find("b").gameObject;
+        // fuck me for naming these level instead of power - mohammed
+        // this code just finds the children for player_ship. again, shitty names
+        level1and3 = transform.Find("level1&3").gameObject;
+        level2and3and4A = transform.Find("level2&3&4A").gameObject;
+        level2and3and4B = transform.Find("level2&3&4B").gameObject;
+        level4A = transform.Find("level4A").gameObject;
+        level4B = transform.Find("level4B").gameObject;
     }
 
     void Start() {
@@ -44,7 +58,7 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Update() {
-        //movement times our speed variable
+        // movement times our speed variable
         // this solution gives us the classic problem of two input buttons at once being pressed
         // doubbling the movement speed, worth fixing?
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")* speed,0));
@@ -70,6 +84,9 @@ public class SpaceShip : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)&&delay > .05){
             Shoot();
         }
+
+
+
 
         // adds time since last shot every frame
         // am very aware that this is dependant on FPS and will not end up the same on all computers
@@ -118,7 +135,7 @@ public class SpaceShip : MonoBehaviour
                 //yield return new WaitForSeconds(4);
                 //health = 4;
             }
-        //funktion för att få kamerand att skaka 0,2 sekunder -Alfred
+        //funktion för att få kameran att skaka 0,2 sekunder -Alfred
         cameraShake.Shake(0.2f);
     }
     IEnumerator Blink(){
@@ -137,11 +154,37 @@ public class SpaceShip : MonoBehaviour
         // resets our delay AKA time since last shot.
         delay = 0;
 
+        // how i want the bullet system to work (maths)
+        // see image, https://i.imgur.com/fuXgFn4.png
+        // actually adding one more lazer to 100 since it's going to be annoying otherwise
+        // if pewpew is full, shoot bambam (something special, otherwise just 4 lasers cause i'm lazy lmao)
+        if (PScore >= 100) {
+            Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
+            Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
+            Instantiate(bullet, level4A.transform.position, Quaternion.identity);
+            Instantiate(bullet, level4B.transform.position, Quaternion.identity);
+            // maybe remove this one later
+            Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
+        }
+        // if pscore is more than or equal to 50, shoot three pewpew
+        else if (PScore >= 50) {
+            Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
+            Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
+            Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
+        }
+        // if pscore is more than 25, shoot two pewpew
+        else if (PScore >= 25) {
+            Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
+            Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
+        }
+        // if pscore is less than or equal to 25, shoot one pewpew
+        if (PScore <= 25) {
+            Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
+        }
 
-        // spawn bullet at location A and b
-        Instantiate(bullet, a.transform.position, Quaternion.identity);
-        Instantiate(bullet, b.transform.position, Quaternion.identity);
+       
+
+        
+
     }
-    
-    
 }
