@@ -26,9 +26,12 @@ public class LaserWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (laserWallRB == true)
+        {
         //Makes the laserwall move down forever
-        Debug.Log("Frame");
         laserWallRB.AddForce(new Vector2(0,-10));
+        }
+
 
 
         Destroy(gameObject, 2);
