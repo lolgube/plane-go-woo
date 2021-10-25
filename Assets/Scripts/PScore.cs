@@ -49,7 +49,7 @@ public class PScore : MonoBehaviour
         }
     }
     private void pScoreRandomizeWorth() {
-        pscoreWorth = Random.Range(1, 5);
+        pscoreWorth = Random.Range(5, 10);
     }
     private void Update() {
         rb.velocity = new Vector2(0,ySpeed*-1);

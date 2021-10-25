@@ -32,6 +32,7 @@ public class SpaceShip : MonoBehaviour
 
     // p-score testing
     public static int PScore = 0;
+    int PScoreLost;
     //cameraShake script -ALfred
     public cameraShake cameraShake;
 
@@ -124,6 +125,12 @@ public class SpaceShip : MonoBehaviour
     // this acts as the player death function
     public void Damage(){
         health--;
+
+        // makes us lose a random amount of p-score on hit (like 10-15)
+        PScoreLost = Random.Range(10, 15);
+        PScore =- PScoreLost;
+        PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
+
         // ow (turns em red on hit)
         StartCoroutine(Blink());
             if(health == 0)
