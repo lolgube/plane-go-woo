@@ -172,13 +172,13 @@ public class SpaceShip : MonoBehaviour
             Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
             Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
         }
-        // if pscore is more than 25, shoot two pewpew
+        // if pscore is more than or equal 25, shoot two pewpew
         else if (PScore >= 25) {
             Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
             Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
         }
-        // if pscore is less than or equal to 25, shoot one pewpew
-        if (PScore <= 25) {
+        // if pscore is less than 25, shoot one pewpew
+        if (PScore < 25) {
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
         }
 
