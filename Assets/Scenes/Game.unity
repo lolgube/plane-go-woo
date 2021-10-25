@@ -3559,7 +3559,7 @@ PrefabInstance:
     - target: {fileID: 4072701444502729621, guid: 1665c08a2867f4b4d9840c2e734bf844,
         type: 3}
       propertyPath: waves
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4072701444502729621, guid: 1665c08a2867f4b4d9840c2e734bf844,
         type: 3}
