@@ -180,6 +180,7 @@ public class SpaceShip : MonoBehaviour
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
         }
         // if pscore is more than or equal to 50, shoot three pewpew
+        // ADD visual difference here or above
         else if (PScore >= 50) {
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
             Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
