@@ -21,6 +21,10 @@ public class SpaceShip : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     AudioManager aM;
+    //animatorn
+    public Animator animator;
+    //vector för animation
+    public Vector2 direction;
 
 
     // this variable is supposed to be set at the main menu (or a scene before it)
@@ -69,11 +73,11 @@ public class SpaceShip : MonoBehaviour
         // update, the code below actaully fucks with the movement pretty hard.
         // gives a bit of a delay when you stop pressing a button, not good.
         // yeah, i guess i'll just use the original solution. a shame.
-        
-        /*Vector2 direction = new Vector2(0,0);
+
+      
         direction.x = Input.GetAxis("Horizontal");
         direction.y = Input.GetAxis("Vertical");
-        direction.Normalize();
+      /*  direction.Normalize();
         rb.AddForce(direction*speed); */
 
         // lemme try this maybe - okay this gave the absolute worst result i've seen yet. nice
@@ -105,10 +109,16 @@ public class SpaceShip : MonoBehaviour
             PScore += 5;
             PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
         }
-        
+
 
         //print("starthealth = " + startHealth);
         //print("health = " + health);
+        //Sätter Parametern Horizontal till hastigheten man rör sig höger och vänster
+        animator.SetFloat("Horizontal", direction.x);
+        //sätter parametern Vertical till hastigheten man rör sig upp och ner
+        animator.SetFloat("Vertical", direction.y);
+        //Setter parametern speed till hastigheten man rör sig längst direction-Alfred
+        animator.SetFloat("Speed", direction.sqrMagnitude);
     }
 
     // this acts as the player death function
