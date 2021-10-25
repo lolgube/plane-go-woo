@@ -110,7 +110,7 @@ public class SpaceShip : MonoBehaviour
             PScore += 5;
             PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
         }
-
+        
 
         //print("starthealth = " + startHealth);
         //print("health = " + health);
@@ -120,6 +120,7 @@ public class SpaceShip : MonoBehaviour
         animator.SetFloat("Vertical", direction.y);
         //Setter parametern speed till hastigheten man rör sig längst direction-Alfred
         animator.SetFloat("Speed", direction.sqrMagnitude);
+        animator.SetFloat("Power", PScore);
     }
 
     // this acts as the player death function
