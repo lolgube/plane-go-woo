@@ -84,10 +84,6 @@ public class SpaceShip : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)&&delay > .05){
             Shoot();
         }
-
-
-
-
         // adds time since last shot every frame
         // am very aware that this is dependant on FPS and will not end up the same on all computers
         // fuck. 

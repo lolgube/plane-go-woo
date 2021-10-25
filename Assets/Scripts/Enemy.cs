@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public float fireRate, health;
     // how much score our enemies are worth
     public int score;
-    
+   
 
 
 
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
     // if collission with player
     private void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag=="Player"){
-         
+        
             // enemy collides with player ship, get player collider, 
             // ...get player gameobject, get spaceship script, take damage.
             col.gameObject.GetComponent<SpaceShip>().Damage();
