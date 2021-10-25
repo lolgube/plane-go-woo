@@ -4,26 +4,29 @@ using UnityEngine;
 
 
 // all this script does is make sure the prefab functionality works fine
-
 public class PScore : MonoBehaviour
 {
     AudioManager aM;
+    Rigidbody2D rb;
     [SerializeField]
     bool isThisAMaxItem;
     int pscoreWorth;
     // p-scoreMaxOut puts your p-score at the highest, could be a useful drop.
     int pScoreMaxOut = 100;
+    // sets our y speed
+    public float ySpeed;
 
     private void Start() {
         aM = FindObjectOfType<AudioManager>();
         pscoreWorth = Mathf.Clamp(pscoreWorth, 0, 100);
+        rb = GetComponent<Rigidbody2D>();
     }
     // if collide, give player pscore and then go away
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Player"){
-            //////////////////////////////////////////////////
-            // CHANGE THIS SOUND FOR P-SCORE AT SOME POINT ///
-            //////////////////////////////////////////////////
+            /////////////////////////////////////////////////
+            // CHANGE THIS SOUND FOR P-SCORE AT SOME POINT //
+            /////////////////////////////////////////////////
             FindObjectOfType<AudioManager>().Play("Health pickup");
 
             // randomizes small p-score thingie worth
@@ -45,8 +48,10 @@ public class PScore : MonoBehaviour
             
         }
     }
-
     private void pScoreRandomizeWorth() {
         pscoreWorth = Random.Range(1, 5);
+    }
+    private void Update() {
+        rb.velocity = new Vector2(0,ySpeed*-1);
     }
 }
