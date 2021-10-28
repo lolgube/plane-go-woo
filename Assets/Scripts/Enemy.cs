@@ -65,8 +65,17 @@ public class Enemy : MonoBehaviour
             // also kill the enemy (they suck)
             Die();
         }
+        
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Laser")
+        {
+            print("Yes");
+            Die();
+        }
+    }
+
     void Die(){
         if((int)Random.Range(0,4)==0){
             Instantiate(battery,transform.position,Quaternion.identity);
