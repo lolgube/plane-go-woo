@@ -18,6 +18,7 @@ public class SpaceShip : MonoBehaviour
     [Header("Here's the rest of our stuff.")]
     public GameObject bullet; 
     public GameObject spaceShipExplosion;
+    public bool dead;
     Rigidbody2D rb;
     public float speed;
     AudioManager aM;
@@ -51,8 +52,9 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Start() {
+      
         aM = FindObjectOfType<AudioManager>();
-
+        dead = false;
         // resets our score
         // has to be in this script because the spaceship is there from the start, otherwise it'll be wrong
         // until an enemy spawns  ^(and not in enenemy.cs)
@@ -63,84 +65,91 @@ public class SpaceShip : MonoBehaviour
     }
 
     void Update() {
-        // movement times our speed variable
-        // this solution gives us the classic problem of two input buttons at once being pressed
-        // doubbling the movement speed, worth fixing?
-        rb.AddForce(new Vector2(Input.GetAxis("Horizontal")* speed,0));
-        rb.AddForce(new Vector2(0,Input.GetAxis("Vertical")* speed));
+        //om man inte är död kan man göra saker- Alfred
+        if (dead == false)
+        {
+            // movement times our speed variable
+            // this solution gives us the classic problem of two input buttons at once being pressed
+            // doubbling the movement speed, worth fixing?
+            rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
+            rb.AddForce(new Vector2(0, Input.GetAxis("Vertical") * speed));
 
-        // this solution below seems to solve that, direction.normalize seems to be what's fixing the issue.
-        // speed values are different, but that'll be fixed manually
-        // update, the code below actaully fucks with the movement pretty hard.
-        // gives a bit of a delay when you stop pressing a button, not good.
-        // yeah, i guess i'll just use the original solution. a shame.
+            // this solution below seems to solve that, direction.normalize seems to be what's fixing the issue.
+            // speed values are different, but that'll be fixed manually
+            // update, the code below actaully fucks with the movement pretty hard.
+            // gives a bit of a delay when you stop pressing a button, not good.
+            // yeah, i guess i'll just use the original solution. a shame.
 
-      
-        direction.x = Input.GetAxis("Horizontal");
-        direction.y = Input.GetAxis("Vertical");
-      /*  direction.Normalize();
-        rb.AddForce(direction*speed); */
 
-        // lemme try this maybe - okay this gave the absolute worst result i've seen yet. nice
-        //rb.velocity = rb.velocity.normalized * speed;
-        // i give up. not worth the hassle
+            direction.x = Input.GetAxis("Horizontal");
+            direction.y = Input.GetAxis("Vertical");
+            /*  direction.Normalize();
+              rb.AddForce(direction*speed); */
 
-        // when you press space, shoot (if delay is more than X)
-        if(Input.GetKey(KeyCode.Space)&&delay > .05){
-            Shoot();
+            // lemme try this maybe - okay this gave the absolute worst result i've seen yet. nice
+            //rb.velocity = rb.velocity.normalized * speed;
+            // i give up. not worth the hassle
+
+            // when you press space, shoot (if delay is more than X)
+            if (Input.GetKey(KeyCode.Space) && delay > .05)
+            {
+                Shoot();
+            }
+            // adds time since last shot every frame
+            // am very aware that this is dependant on FPS and will not end up the same on all computers
+            // fuck. 
+            //delay++;
+            // update 1: okay, this made the calculation a bit different but it should end up being the same
+            // maybe i'll have to test this, will i bother tho?
+            // update 2: it messed with a few things but i patched those up, this should make the
+            // shoot speed independent from fps
+            delay += 1f * Time.deltaTime;
+
+            //print(delay);
+            //print(health);
+            // debug, might keep it in for luls
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                health++;
+            }
+            // also debug, keeping it in for the moment
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                PScore += 5;
+                PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
+            }
+
+            //print("starthealth = " + startHealth);
+            //print("health = " + health);
+            //Sätter Parametern Horizontal till hastigheten man rör sig höger och vänster
+            animator.SetFloat("Horizontal", direction.x);
+            //sätter parametern Vertical till hastigheten man rör sig upp och ner
+            animator.SetFloat("Vertical", direction.y);
+            //Setter parametern speed till hastigheten man rör sig längst direction-Alfred
+            animator.SetFloat("Speed", direction.sqrMagnitude);
+            animator.SetFloat("Power", PScore);
         }
-        // adds time since last shot every frame
-        // am very aware that this is dependant on FPS and will not end up the same on all computers
-        // fuck. 
-        //delay++;
-        // update 1: okay, this made the calculation a bit different but it should end up being the same
-        // maybe i'll have to test this, will i bother tho?
-        // update 2: it messed with a few things but i patched those up, this should make the
-        // shoot speed independent from fps
-        delay += 1f * Time.deltaTime;
-
-        //print(delay);
-        //print(health);
-        // debug, might keep it in for luls
-        if(Input.GetKeyDown(KeyCode.H)){
-            health++;
-        }
-        // also debug, keeping it in for the moment
-        if(Input.GetKeyDown(KeyCode.J)){
-            PScore += 5;
-            PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
-        }
-
-        //print("starthealth = " + startHealth);
-        //print("health = " + health);
-        //Sätter Parametern Horizontal till hastigheten man rör sig höger och vänster
-        animator.SetFloat("Horizontal", direction.x);
-        //sätter parametern Vertical till hastigheten man rör sig upp och ner
-        animator.SetFloat("Vertical", direction.y);
-        //Setter parametern speed till hastigheten man rör sig längst direction-Alfred
-        animator.SetFloat("Speed", direction.sqrMagnitude);
-        animator.SetFloat("Power", PScore);
     }
 
     // this acts as the player death function
     public void Damage(){
-        health--;
-
-        // makes us lose a random amount of p-score on hit (like 10-15)
-        PScoreLost = Random.Range(10, 15);
-        PScore =- PScoreLost;
-        PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
-
-        // ow (turns em red on hit)
-        StartCoroutine(Blink());
-            if(health == 0)
+        if (dead == false)
         {
-                // boom
-                Instantiate(spaceShipExplosion,transform.position,Quaternion.identity);
-                // add sound here typ
-                // die
-                Destroy(gameObject);
-                
+
+
+            health--;
+
+            // makes us lose a random amount of p-score on hit (like 10-15)
+            PScoreLost = Random.Range(10, 15);
+            PScore = -PScoreLost;
+            PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
+
+            // ow (turns em red on hit)
+            StartCoroutine(Blink());
+            if (health == 0)
+            {
+                dead = true;
+                StartCoroutine(Death());
                 // maybe play a sound?
                 // show some fail thing for a few seconds
                 // bring up a menu that'll let me restart the scene or go back to the main menu
@@ -148,8 +157,21 @@ public class SpaceShip : MonoBehaviour
                 //yield return new WaitForSeconds(4);
                 //health = 4;
             }
-        //funktion för att få kameran att skaka 0,2 sekunder -Alfred
-        cameraShake.Shake(0.2f);
+            //funktion för att få kameran att skaka 0,2 sekunder -Alfred
+            cameraShake.Shake(0.2f);
+        }
+    }
+    IEnumerator Death()
+    {
+        //Startar döds animationen
+        animator.SetTrigger("Dead");
+        // boom
+        //vänta 2 sekunder(så lång döds animationen är)
+        yield return new WaitForSeconds(2f);
+        Instantiate(spaceShipExplosion, transform.position, Quaternion.identity);
+        // add sound here typ
+        // die
+        Destroy(gameObject);
     }
     IEnumerator Blink(){
         // makes our spaceship red (r,g,b)

@@ -28,9 +28,18 @@ public class Bullet : MonoBehaviour {
     }
 
     // makes our bullet move (*dir means direction, moves down if it's negative)
-    void Update() {
-        rb.velocity = new Vector2(0,10*dir); 
-
+    void Update()
+    {
+        //om skottet åker neråt(fienden som skuter) så åker den helften så snabbt- Alfred
+        if (dir <=0)
+        {
+            rb.velocity = new Vector2(0, 5 * dir);
+        }
+        else if (dir >= 0)//om skottet åker uppåt(spelaren som skuter) så åker den i normal hastighet- Alfred
+        {
+            rb.velocity = new Vector2(0, 10 * dir);
+        }
+        
         // destroys our bullet after a while
         bulletTimeLeftAlive -= Time.deltaTime;
         if(bulletTimeLeftAlive < 0f){

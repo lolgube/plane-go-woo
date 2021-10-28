@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1176301120371937430}
   - component: {fileID: 1176301120371937426}
   - component: {fileID: 1176301120371937425}
+  - component: {fileID: 6123373126558821623}
   m_Layer: 9
   m_Name: TankEnemy
   m_TagString: Enemy
@@ -106,10 +107,11 @@ SpriteRenderer:
   m_SortingLayerID: 1759675411
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2aa842fe86e5a1e4fb6a7634ad321b1d, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 2702700038082533584, guid: 7544da99f3fa678409a3bfc6348bd23e,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -134,7 +136,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.57, y: 0.9}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -142,17 +144,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.31953698, y: 0.13240194}
-      - {x: 0.1326439, y: -0.3738495}
+    - - {x: 0.34388277, y: -0.25713056}
+      - {x: 0.20568122, y: -0.4529733}
       - {x: -0.032892287, y: -0.45142475}
-      - {x: -0.19540069, y: -0.3939184}
-      - {x: -0.29176196, y: -0.15776518}
-      - {x: -0.38052678, y: 0.14379825}
-      - {x: -0.37652934, y: 0.37711403}
-      - {x: -0.24468865, y: 0.3697052}
-      - {x: -0.026624149, y: 0.07223719}
-      - {x: 0.20457318, y: 0.38090608}
-      - {x: 0.3022373, y: 0.3801927}
+      - {x: -0.268438, y: -0.43652356}
+      - {x: -0.34653997, y: -0.2551483}
+      - {x: -0.33183527, y: 0.05858802}
+      - {x: -0.29131916, y: 0.158002}
+      - {x: -0.20816998, y: 0.21145763}
+      - {x: 0.0038080737, y: 0.23657121}
+      - {x: 0.24717829, y: 0.2104856}
+      - {x: 0.27789152, y: 0.16716713}
 --- !u!50 &1176301120371937426
 Rigidbody2D:
   serializedVersion: 4
@@ -195,10 +197,29 @@ MonoBehaviour:
   c: {fileID: 0}
   xSpeed: 0
   ySpeed: 1.2
-  canShoot: 1
+  canShoot: 0
   fireRate: 3
   health: 20
   score: 405
+--- !u!95 &6123373126558821623
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176301120371937429}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 251f4847f5a8c7a458ad387bebaff145, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8687755382124263843
 GameObject:
   m_ObjectHideFlags: 0
