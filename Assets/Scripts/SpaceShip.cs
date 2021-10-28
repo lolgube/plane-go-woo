@@ -110,7 +110,6 @@ public class SpaceShip : MonoBehaviour
             PScore += 5;
             PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
         }
-        
 
         //print("starthealth = " + startHealth);
         //print("health = " + health);

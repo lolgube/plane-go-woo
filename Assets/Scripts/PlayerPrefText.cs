@@ -24,5 +24,11 @@ public class PlayerPrefText : MonoBehaviour
         // display score, d10 stands for 10 decimals, keeping it old school and cool
         GetComponent<TMP_Text>().text = score.ToString("D10");
         //print(score);
+
+        // debug 3
+        if(Input.GetKeyDown(KeyCode.K)){
+            PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+ 1000);
+            print("ligma");
+        }
     }
 }
