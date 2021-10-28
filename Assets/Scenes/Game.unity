@@ -1623,6 +1623,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 267153720, guid: 292458ae87c6f4745896035a394622ba, type: 3}
+      propertyPath: bossSpriteRenderer
+      value: 
+      objectReference: {fileID: 1159983070}
     - target: {fileID: 206295183439237810, guid: 292458ae87c6f4745896035a394622ba,
         type: 3}
       propertyPath: m_Name
@@ -1706,6 +1710,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 70539840625684338, guid: 292458ae87c6f4745896035a394622ba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 292458ae87c6f4745896035a394622ba, type: 3}
+--- !u!212 &1159983070 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 927821123810204617, guid: 292458ae87c6f4745896035a394622ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1159983069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1184473544
 GameObject:
   m_ObjectHideFlags: 0
