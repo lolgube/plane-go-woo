@@ -8,6 +8,9 @@ public class Spawn : MonoBehaviour {
     public GameObject[] enemies;
     public int waves = 1;
 
+    public Sprite[] asteroidSprites;
+    
+
     void Start() {
         //invokeRepeating basically starts a desired function after x time, 
         //and then runs that function again every x time

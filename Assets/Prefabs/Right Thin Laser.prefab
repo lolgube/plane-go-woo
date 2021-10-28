@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8332036463650130623}
   - component: {fileID: 8332036463650130622}
-  - component: {fileID: 4080904002387032056}
   m_Layer: 0
   m_Name: Right Thin Laser
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,20 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4080904002387032056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332036463650130621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077901a65b798254fa54dd6b552ca91e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserWallRB: {fileID: 0}
-  laserWallCollider: {fileID: 0}
 --- !u!1 &8332036463851187529
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,9 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8332036463851187530}
   - component: {fileID: 8332036463851187531}
+  - component: {fileID: 3074929448172392408}
   m_Layer: 0
   m_Name: Thin Right Collider
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +126,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.015816242, y: 0.16702512}
@@ -156,3 +142,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.52277416, y: 2.1139941}
   m_EdgeRadius: 0
+--- !u!114 &3074929448172392408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332036463851187529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077901a65b798254fa54dd6b552ca91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserWallRB: {fileID: 0}
+  laserWallCollider: {fileID: 8332036463851187531}

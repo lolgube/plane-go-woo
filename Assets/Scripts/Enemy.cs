@@ -65,14 +65,23 @@ public class Enemy : MonoBehaviour
             // also kill the enemy (they suck)
             Die();
         }
+        
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Laser")
+        {
+            print("Yes");
+            Die();
+        }
+    }
+
     void Die(){
-        if((int)Random.Range(0,6)==0){
+        if((int)Random.Range(0,4)==0){
             Instantiate(battery,transform.position,Quaternion.identity);
             // one in 7  chance to spawn battery
         }
-        if((int)Random.Range(0,3)==0){
+        if((int)Random.Range(0,2)==0){
             // one in 4 (maybe change?) chance to spawn p-score (just the tiny one)
             Instantiate(pscore,transform.position,Quaternion.identity);
         }

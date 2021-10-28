@@ -135,12 +135,10 @@ public class SpaceShip : MonoBehaviour
     public void Damage(){
         if (dead == false)
         {
-
-
             health--;
 
-            // makes us lose a random amount of p-score on hit (like 10-15)
-            PScoreLost = Random.Range(10, 15);
+            // makes us lose a random amount of p-score on hit (like 5-10)
+            PScoreLost = Random.Range(5, 10);
             PScore = -PScoreLost;
             PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
 
