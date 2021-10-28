@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 public class TypewriterText : MonoBehaviour
 {
     public  float textSpeed = 0.1f;
+    //TextAreaAttribute(int minLines, int maxLines);
+    [TextArea(15,20)]
     public string entireText;
     private string currentText = "";
     
@@ -35,7 +37,7 @@ public class TypewriterText : MonoBehaviour
 
 // after 28 seconds, load the next scene
     IEnumerator CutsceneTime(){
-        yield return new WaitForSeconds(28);
+        yield return new WaitForSeconds(36);
         SceneManager.LoadScene(2);
     }
 }
