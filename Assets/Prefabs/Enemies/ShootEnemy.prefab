@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c24764c3aa3ebea46b7fe44f52a09a66, type: 3}
-  m_Color: {r: 1, g: 0.585702, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
     type: 3}
   battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
   pscore: {fileID: 4441312734472727258, guid: 5d1006699e258ca4884bb70e62b3996e, type: 3}
-  bulletColor: {r: 1, g: 0.58431375, b: 0, a: 1}
+  bulletColor: {r: 0, g: 1, b: 0.9406419, a: 1}
   c: {fileID: 0}
   xSpeed: 0
   ySpeed: 2

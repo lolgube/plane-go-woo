@@ -103,6 +103,8 @@ public class Enemy : MonoBehaviour
     void Shoot(){
         GameObject temp = (GameObject) Instantiate(bullet,c.transform.position,Quaternion.identity);
         temp.GetComponent<Bullet>().ChangeDirection();
+        // if we want to fuck with the size of the bullet, refer to this line
+        //temp.transform.localScale = new Vector3(whatever.x, whatever.y, whatever.z);
 
         // lets us change our instantiated bullets color
         // fyi you need to change the alpha to be able to see the bullets,  
