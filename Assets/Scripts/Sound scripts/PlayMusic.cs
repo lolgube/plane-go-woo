@@ -10,9 +10,13 @@ public class PlayMusic : MonoBehaviour
     public int songIndex;
     //array med olika låtar
     public AudioClip[] audioClips;
+    public PåskÄgg påsk;
 
     private void Start()
     {
+        //easteregg
+        int mio = PåskÄgg.mio;
+        songIndex = mio;
         //starta coroutine som startar låten
         StartCoroutine(PlaySong());
     }
