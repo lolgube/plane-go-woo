@@ -342,36 +342,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &267153713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 206295183439237810, guid: 292458ae87c6f4745896035a394622ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 1159983069}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &267153720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267153713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d41f44d424223dd44ac3c79ede09e311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thickLaserWall: {fileID: 111275203596484797, guid: f03859972c66ecd41b87c30c2f68646c,
-    type: 3}
-  attackWarning: {fileID: 5017260635409149099, guid: 7fc86b67fbd96ec45a5f8fb7191e2fff,
-    type: 3}
-  wallXPositionRandom: 0
-  spawningAttack: 0
-  chooseLaser: 0
-  thinLaser:
-  - {fileID: 4406350427463011843, guid: 214343a3be99fc94d94135e299120bbc, type: 3}
-  - {fileID: 7566497148677563942, guid: 5f059f230c4252f4fb93bf64560b7ebc, type: 3}
-  - {fileID: 8332036463650130621, guid: b59c3f8fc37282341aa3485c9f6bf277, type: 3}
-  warningPosition: faffffff0000000006000000
 --- !u!1 &471005619
 GameObject:
   m_ObjectHideFlags: 0

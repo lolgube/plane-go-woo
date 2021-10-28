@@ -50,13 +50,13 @@ public class BossLaser : MonoBehaviour
         //Randomly chooses which of the lasers that will spawn
         chooseLaser = Random.Range(0, 2);
         //Spawns an attack warning randomly in one of three positions
-        GameObject warning = Instantiate(attackWarning, new Vector2(warningPosition[wallXPositionRandom], 0), Quaternion.identity);
+        GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
         //Waits for 2 seconds
         yield return new WaitForSecondsRealtime(4f);
         //Spawns on of two different laserwallattacks in the same x position as the attack warning
         if(chooseLaser == 1)
         {
-            Instantiate(thickLaserWall, new Vector2(warningPosition[wallXPositionRandom], 20), Quaternion.identity);
+            Instantiate(thickLaserWall, new Vector3(warningPosition[wallXPositionRandom], 20, 1), Quaternion.identity);
         }
         else
         {
