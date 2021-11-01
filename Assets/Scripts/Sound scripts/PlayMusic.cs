@@ -6,27 +6,27 @@ public class PlayMusic : MonoBehaviour
 {
     //audiosource ur inspectorn
     public new AudioSource audio;
-    //Nummer för varje låt
+    //Nummer fÃ¶r varje lÃ¥t
     public int songIndex;
-    //array med olika låtar
+    //array med olika lÃ¥tar
     public AudioClip[] audioClips;
-    public PåskÄgg påsk;
+    public PÃ¥skÃ„gg pÃ¥sk;
 
     private void Start()
     {
         //easteregg
-        int mio = PåskÄgg.mio;
+        int mio = PÃ¥skÃ„gg.mio;
         songIndex = mio;
-        //starta coroutine som startar låten
+        //starta coroutine som startar lÃ¥ten
         StartCoroutine(PlaySong());
     }
     IEnumerator PlaySong()
     {
-        //lägg in den låten vi har valt med index
+        //lÃ¤gg in den lÃ¥ten vi har valt med index
         audio.clip = audioClips[songIndex];
-        //spela ljudet(låten)
+        //spela ljudet(lÃ¥ten)
         audio.Play();
-        //vänta så många sekunder som låten är lång
+        //vÃ¤nta sÃ¥ mÃ¥nga sekunder som lÃ¥ten Ã¤r lÃ¥ng
         yield return new WaitForSeconds(audio.clip.length);
         //starta om coroutine vilket loopar songen
         StartCoroutine(PlaySong());

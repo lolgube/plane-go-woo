@@ -215,10 +215,5 @@ public class SpaceShip : MonoBehaviour
         if (PScore < 25) {
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
         }
-
-       
-
-        
-
     }
 }
