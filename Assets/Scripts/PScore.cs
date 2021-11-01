@@ -24,6 +24,7 @@ public class PScore : MonoBehaviour
     // if collide, give player pscore and then go away
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Player"){
+            print("YOU PICKED UP SOME P-SCORE");
             /////////////////////////////////////////////////
             // CHANGE THIS SOUND FOR P-SCORE AT SOME POINT //
             /////////////////////////////////////////////////

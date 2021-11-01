@@ -19,5 +19,7 @@ public class PScoreUI : MonoBehaviour
         // displays our normal score
         GetComponent<TMP_Text>().text = "Power: " + SpaceShip.PScore.ToString();
         }
+
+        //print("pscore = " + SpaceShip.PScore + " health: " + SpaceShip.health);
     }
 }

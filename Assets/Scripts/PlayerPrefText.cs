@@ -28,7 +28,7 @@ public class PlayerPrefText : MonoBehaviour
         // debug 3
         if(Input.GetKeyDown(KeyCode.K)){
             PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+ 1000);
-            print("ligma");
+            //print("ligma");
         }
     }
 }

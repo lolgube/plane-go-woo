@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class cameraShake : MonoBehaviour
 {
-    //hur länge den skakar med frekvensen -Alfred
+    //hur lÃ¤nge den skakar med frekvensen -Alfred
     Vector2 time;
     //bool som kollar om man ska skaka -Alfred
     private bool shouldShake;
-    //timer för hur länge man ska skaka -Alfred
+    //timer fÃ¶r hur lÃ¤nge man ska skaka -Alfred
     float timer;
 
     private void Update()
     {
-        //positionen för objektet som ska skaka -Alfred
+        //positionen fÃ¶r objektet som ska skaka -Alfred
         Vector3 shakePos = transform.localPosition;
-        //multipliserar frekvensen med tid så man kan få den att skaka
+        //multipliserar frekvensen med tid sÃ¥ man kan fÃ¥ den att skaka
         time.x += Time.deltaTime * 71;
         time.y += Time.deltaTime * 28;
 
@@ -43,7 +43,7 @@ public class cameraShake : MonoBehaviour
     public void Shake(float timeToShake)
     {
         timer = timeToShake;
-        print("shake");
+        //print("shake");
         
     }
 }
