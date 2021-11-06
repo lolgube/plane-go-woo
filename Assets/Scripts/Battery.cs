@@ -13,6 +13,7 @@ public class Battery : MonoBehaviour
     private void Start() {
         aM = FindObjectOfType<AudioManager>();
         rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject,50);
     }
     // makes the thing fall slowly
     private void Update() {

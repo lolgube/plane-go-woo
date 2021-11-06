@@ -20,6 +20,7 @@ public class PScore : MonoBehaviour
         aM = FindObjectOfType<AudioManager>();
         pscoreWorth = Mathf.Clamp(pscoreWorth, 0, 100);
         rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject,50);
     }
     // if collide, give player pscore and then go away
     private void OnTriggerEnter2D(Collider2D col) {
