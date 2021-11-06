@@ -82,6 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4406350427463011845}
   - component: {fileID: 4406350427463011842}
+  - component: {fileID: 4410434472357105459}
   m_Layer: 0
   m_Name: Left Thin Laser
   m_TagString: Laser
@@ -156,3 +157,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4410434472357105459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4406350427463011843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9a1f856b6bd97408c161c149771066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
