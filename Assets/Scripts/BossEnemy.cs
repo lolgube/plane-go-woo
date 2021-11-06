@@ -18,6 +18,7 @@ public class BossEnemy : MonoBehaviour
     public int score;
 
     BossSpawn boss;
+    public Animator bossDeathAnimator;
     
     void Start()
     {
@@ -41,7 +42,13 @@ public class BossEnemy : MonoBehaviour
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
         boss.BossSpawned = 0;
         print("BossDed");
-        
+
+        if (bossHealth == 0)
+        {
+            bossDeathAnimator.SetBool("BossDeath", true);
+            print("Bosshealth == 0");
+            Die();
+        }
 
         // maybe play a sound?
     }
@@ -50,11 +57,6 @@ public class BossEnemy : MonoBehaviour
     public void Damage()
     {
         bossHealth--;
-        if (bossHealth == 0)
-        {
-            print("Bosshealth == 0");
-            Die();
-        }
     }
 
     

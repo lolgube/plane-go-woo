@@ -30,10 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206295183439237810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.072267056, y: -0.32, z: 11}
+  m_LocalPosition: {x: 0, y: 0, z: 11}
   m_LocalScale: {x: 15, y: 15, z: 1}
-  m_Children:
-  - {fileID: 3601316540674127359}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -168,6 +167,7 @@ MonoBehaviour:
   canShoot: 0
   bossHealth: 500
   score: 0
+  bossDeathAnimator: {fileID: 444845411}
 --- !u!114 &267153720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
     type: 3}
   attackWarning: {fileID: 5017260635409149099, guid: 7fc86b67fbd96ec45a5f8fb7191e2fff,
     type: 3}
-  bossBall: {fileID: 444845414}
   bossSpriteRenderer: {fileID: 0}
+  bossAnimator: {fileID: 444845411}
   wallXPositionRandom: 0
   spawningAttack: 0
   chooseLaser: 0

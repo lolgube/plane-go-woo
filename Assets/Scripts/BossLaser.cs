@@ -10,6 +10,7 @@ public class BossLaser : MonoBehaviour
     public GameObject thickLaserWall;
     public GameObject attackWarning;
     public SpriteRenderer bossSpriteRenderer;
+    public Animator bossAnimator;
     public int wallXPositionRandom;
     public bool spawningAttack = false;
     public int chooseLaser;
@@ -55,8 +56,8 @@ public class BossLaser : MonoBehaviour
         GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
         //Waits for 4 seconds
         yield return new WaitForSecondsRealtime(4f);
-        
-        
+
+        bossAnimator.SetBool("BossAttackAnimation", true);
         //Spawns on of two different laserwallattacks in the same x position as the attack warning
         if(chooseLaser == 1)
         {
@@ -74,8 +75,8 @@ public class BossLaser : MonoBehaviour
         //Destroys attack warning
         Destroy(warning);
         yield return new WaitForSecondsRealtime(2);
-       
-        
+        bossAnimator.SetBool("BossAttackAnimation", false);
+
         //Ends the spawning so that another attack can start spawning
         spawningAttack = false;
     }
