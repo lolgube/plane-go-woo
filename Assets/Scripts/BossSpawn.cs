@@ -18,7 +18,7 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
     // Update is called once per frame
     void Update()
     {
-        if(PlayerPrefText.score >= 10000) //Om poängen är över 10000
+        if(PlayerPrefText.score >= 1000) //Om poängen är över 10000
         {
             ShouldBossSpawn = true; // Bossen borde spawna
         }

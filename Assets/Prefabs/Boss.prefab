@@ -139,12 +139,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!114 &2807025323376325283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
   xSpeed: 0
   ySpeed: 0
   canShoot: 0
+  bossHealth: 500
   score: 0
 --- !u!114 &267153720
 MonoBehaviour:
@@ -183,8 +184,8 @@ MonoBehaviour:
     type: 3}
   attackWarning: {fileID: 5017260635409149099, guid: 7fc86b67fbd96ec45a5f8fb7191e2fff,
     type: 3}
+  bossBall: {fileID: 444845414}
   bossSpriteRenderer: {fileID: 0}
-  laserAnimation: {fileID: 0}
   wallXPositionRandom: 0
   spawningAttack: 0
   chooseLaser: 0
@@ -192,14 +193,6 @@ MonoBehaviour:
   - {fileID: 4406350427463011843, guid: 214343a3be99fc94d94135e299120bbc, type: 3}
   - {fileID: 7566497148677563942, guid: 5f059f230c4252f4fb93bf64560b7ebc, type: 3}
   - {fileID: 8332036463650130621, guid: b59c3f8fc37282341aa3485c9f6bf277, type: 3}
-  bossSprites:
-  - {fileID: 21300000, guid: 6aabf3eaa5b1db34ea2720e300e54a32, type: 3}
-  - {fileID: 21300000, guid: 3b195bb8173f7f34390ffb759a0689b3, type: 3}
-  - {fileID: 21300000, guid: 134b75b1e1b18934185fbac1947a358b, type: 3}
-  LaserAttack:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   warningPosition: faffffff0000000006000000
 --- !u!1001 &4157681987511139739
 PrefabInstance:

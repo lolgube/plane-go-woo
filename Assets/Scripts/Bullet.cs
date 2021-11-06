@@ -70,17 +70,16 @@ public class Bullet : MonoBehaviour {
 
                 Destroy(gameObject); 
             }
-            else
+            
+            if (col.gameObject.tag == "BossEnemy")
             {
-                if (col.gameObject.tag == "BossEnemy")
-                {
-                    col.gameObject.GetComponent<BossEnemy>().Damage();
+                col.gameObject.GetComponent<BossEnemy>().Damage();
 
-                    // add sound or particle effect (or something) here
+                // add sound or particle effect (or something) here
 
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
+            
         }
     }
 }

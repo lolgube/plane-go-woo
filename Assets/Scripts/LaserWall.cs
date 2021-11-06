@@ -12,7 +12,6 @@ public class LaserWall : MonoBehaviour
         //If you collide with the laser wall
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("LaserHit");
             //The player takes damage
             collision.gameObject.GetComponent<SpaceShip>().Damage();
             laserWallCollider.enabled = false;

@@ -10,7 +10,6 @@ public class BossLaser : MonoBehaviour
     public GameObject thickLaserWall;
     public GameObject attackWarning;
     public SpriteRenderer bossSpriteRenderer;
-    public Animator laserAnimation;
     public int wallXPositionRandom;
     public bool spawningAttack = false;
     public int chooseLaser;
@@ -18,8 +17,6 @@ public class BossLaser : MonoBehaviour
 
     //Creates array for x position
     public GameObject[] thinLaser;
-    public Sprite[] bossSprites;
-    public Animation[] LaserAttack;
     public int[] warningPosition;
 
     
@@ -49,22 +46,26 @@ public class BossLaser : MonoBehaviour
     {
         //Shows that attack is spawning
         spawningAttack = true;
-        yield return new WaitForSecondsRealtime(Random.Range(3, 8));
+        yield return new WaitForSecondsRealtime(Random.Range(1, 6));
         //Chooses one of three positions for the attack warning and attack to spawn
         wallXPositionRandom = Random.Range(0, 3);
         //Randomly chooses which of the lasers that will spawn
         chooseLaser = Random.Range(0, 2);
         //Spawns an attack warning randomly in one of three positions
         GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
-        //bossSpriteRenderer.sprite = bossSprites[wallXPositionRandom];
-
-        laserAnimation.SetBool("LaserAttack[wallXPositionRandom]", true);
         //Waits for 4 seconds
         yield return new WaitForSecondsRealtime(4f);
+        
+        
         //Spawns on of two different laserwallattacks in the same x position as the attack warning
         if(chooseLaser == 1)
         {
-            Instantiate(thickLaserWall, new Vector3(warningPosition[wallXPositionRandom], 20, 1), Quaternion.identity);
+            GameObject thickLaserClone = Instantiate(thickLaserWall, new Vector3(warningPosition[wallXPositionRandom], 20, 1), Quaternion.identity);
+            if(wallXPositionRandom == 1)
+            {
+                Destroy(thickLaserClone);
+                Instantiate(thinLaser[wallXPositionRandom]);
+            }
         }
         else
         {
@@ -72,7 +73,9 @@ public class BossLaser : MonoBehaviour
         }
         //Destroys attack warning
         Destroy(warning);
-
+        yield return new WaitForSecondsRealtime(2);
+       
+        
         //Ends the spawning so that another attack can start spawning
         spawningAttack = false;
     }
