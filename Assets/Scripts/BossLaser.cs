@@ -10,6 +10,7 @@ public class BossLaser : MonoBehaviour
     public GameObject thickLaserWall;
     public GameObject attackWarning;
     public SpriteRenderer bossSpriteRenderer;
+    public Animator laserAnimation;
     public int wallXPositionRandom;
     public bool spawningAttack = false;
     public int chooseLaser;
@@ -17,7 +18,8 @@ public class BossLaser : MonoBehaviour
 
     //Creates array for x position
     public GameObject[] thinLaser;
-    public Sprite[] bossSprites; 
+    public Sprite[] bossSprites;
+    public Animation[] LaserAttack;
     public int[] warningPosition;
 
     
@@ -55,7 +57,9 @@ public class BossLaser : MonoBehaviour
         //Spawns an attack warning randomly in one of three positions
         GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
         //bossSpriteRenderer.sprite = bossSprites[wallXPositionRandom];
-        //Waits for 2 seconds
+
+        laserAnimation.SetBool("LaserAttack[wallXPositionRandom]", true);
+        //Waits for 4 seconds
         yield return new WaitForSecondsRealtime(4f);
         //Spawns on of two different laserwallattacks in the same x position as the attack warning
         if(chooseLaser == 1)
