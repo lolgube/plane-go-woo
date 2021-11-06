@@ -66,7 +66,7 @@ public class SpaceShip : MonoBehaviour
 
     void Update() {
         //om man inte är död kan man göra saker- Alfred
-        if (dead == false)
+        if (dead == false && PauseMenu.GameIsPaused == false)
         {
             // movement times our speed variable
             // this solution gives us the classic problem of two input buttons at once being pressed
@@ -91,7 +91,7 @@ public class SpaceShip : MonoBehaviour
             // i give up. not worth the hassle
 
             // when you press space, shoot (if delay is more than X)
-            if (Input.GetKey(KeyCode.Space) && delay > .05)
+            if (Input.GetKey(KeyCode.Space) && delay > .05 && PauseMenu.GameIsPaused == false)
             {
                 Shoot();
             }
