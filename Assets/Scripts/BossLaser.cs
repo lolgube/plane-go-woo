@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * detta ör för att bossen ska skjuta
+ * detta är för att bossen ska skjuta
  */
 public class BossLaser : MonoBehaviour
 {
@@ -54,7 +54,7 @@ public class BossLaser : MonoBehaviour
         chooseLaser = Random.Range(0, 2);
         //Spawns an attack warning randomly in one of three positions
         GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
-        bossSpriteRenderer.sprite = bossSprites[wallXPositionRandom];
+        //bossSpriteRenderer.sprite = bossSprites[wallXPositionRandom];
         //Waits for 2 seconds
         yield return new WaitForSecondsRealtime(4f);
         //Spawns on of two different laserwallattacks in the same x position as the attack warning

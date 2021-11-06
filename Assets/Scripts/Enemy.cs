@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     void Start() {
         // destroys the enemy after a certain amount of itme
-        Destroy(gameObject,16);
+        Destroy(gameObject,32);
 
         // if we can't shoot, piss off
         if(!canShoot) return;{
@@ -81,11 +81,14 @@ public class Enemy : MonoBehaviour
             Instantiate(battery,transform.position,Quaternion.identity);
             // one in 7  chance to spawn battery
         }
-        if((int)Random.Range(0,2)==0){
+        if(SpaceShip.PScore < 100)
+        {
+            if((int)Random.Range(0,2)==0){
             // one in 4 (maybe change?) chance to spawn p-score (just the tiny one)
             Instantiate(pscore,transform.position,Quaternion.identity);
         }
-
+        }
+        
         //transform.localScale += scaleChange;
 
         // plays our explosion particle effect
