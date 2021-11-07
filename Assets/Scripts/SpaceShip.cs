@@ -188,7 +188,7 @@ public class SpaceShip : MonoBehaviour
         delay = 0;
 
         // how i want the bullet system to work
-        // see image, https://i.imgur.com/fuXgFn4.png
+        // see image, https://i.imgur.com/QWt1ByP.png
         // actually adding one more lazer to 100 since it's going to be annoying otherwise
         // if pewpew is full, shoot bambam (something special, otherwise just 4 lasers cause i'm lazy lmao)
         if (PScore >= 100) {
@@ -198,6 +198,13 @@ public class SpaceShip : MonoBehaviour
             Instantiate(bullet, level4B.transform.position, Quaternion.identity);
             // maybe remove this one later
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
+        }
+        // if pewpew is over 75, shoot four pewpew
+        else if (PScore >= 75) {
+            Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
+            Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
+            Instantiate(bullet, level4A.transform.position, Quaternion.identity);
+            Instantiate(bullet, level4B.transform.position, Quaternion.identity);
         }
         // if pscore is more than or equal to 50, shoot three pewpew
         // ADD visual difference here or above
