@@ -162,7 +162,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!58 &2177073857509141750
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
     type: 3}
   battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
+  bossDying: 0
   bossHealth: 0
   score: 1000
   bossDeathAnimator: {fileID: 0}

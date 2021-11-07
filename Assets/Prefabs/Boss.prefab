@@ -116,7 +116,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206295183439237810}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -160,6 +160,7 @@ MonoBehaviour:
   explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
     type: 3}
   battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
+  bossDying: 0
   bossHealth: 1
   score: 1000
   bossDeathAnimator: {fileID: 444845411}
