@@ -8,19 +8,30 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
     public bool ShouldBossSpawn = false;
     public static int bossSpawned;
 
+    public int bossScoreSpawner;
+
     
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<PlayerPrefText>(); // Hämta koden med poängen
+        bossScoreSpawner = 10000;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(PlayerPrefText.score >= 1000) //Om poängen är över 10000
+        if (PlayerPrefText.score >= bossScoreSpawner) //Om poängen är över bossScoreSpawner
         {
-            ShouldBossSpawn = true; // Bossen borde spawna
+            //Makes it so that boss is spawned every 10000 points
+            bossScoreSpawner = bossScoreSpawner + 10000;
+            //Wont spawn the boss if the points are over 10000 more than bossScoreSpawner
+            //This makes it so that a lot of bosses wont spawn at once if you build up your score without killing the boss
+            if(PlayerPrefText.score <= bossScoreSpawner + 10000)
+            {
+                ShouldBossSpawn = true; // Bossen borde spawna
+            }
+
         }
         if(ShouldBossSpawn == true) // Om bossen borde spawna
         {
@@ -29,7 +40,8 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
         }
     }
     void bossSpawn()
-    {
+    {       
+       ShouldBossSpawn = false;
        if(bossSpawned == 1) 
        {
             return; // Spawnar inte bossen om bossen redan är spawnad
@@ -37,6 +49,7 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
         GameObject RigidPrefab;
         RigidPrefab = Instantiate(Prefab) as GameObject;
         bossSpawned = 1;// Berättar för spelet att Bossen har Spawnat
+
         
     }
 }

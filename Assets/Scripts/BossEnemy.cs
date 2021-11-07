@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     public GameObject explosion, battery;
-    public bool bossDying;
+    public static bool bossDying;
 
 
     // sets boss health
@@ -22,7 +22,7 @@ public class BossEnemy : MonoBehaviour
     }
     void Update()
     {
-        if (bossHealth == 0 && bossDying == false)
+        if (bossHealth <= 0 && bossDying == false)
         {
             StartCoroutine(BossDie());
             bossDying = true;
@@ -30,6 +30,7 @@ public class BossEnemy : MonoBehaviour
     }
     IEnumerator BossDie()
     {
+        //Starts death animation and waits two seconds
         bossDeathAnimator.SetBool("BossDeath", true);
         yield return new WaitForSecondsRealtime(2f);
         //Spawns a battery when boss dies
