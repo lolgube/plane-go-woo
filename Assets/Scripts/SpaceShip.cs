@@ -33,6 +33,7 @@ public class SpaceShip : MonoBehaviour
 
     // p-score testing
     public static int PScore = 0;
+    // how much pscore you lose on damage
     int PScoreLost;
     //cameraShake script -ALfred
     public cameraShake cameraShake;

@@ -15,8 +15,10 @@ using TMPro;
 // that cleared up a lot, thank you
 
 public class HealthUI : MonoBehaviour {
-    public TMP_Text healthText;
+    // commented out in favor of extraHealthUI.cs    
+    //public TMP_Text healthText;
     public int healthCounter;
+    
 
     // this is for the multiple sprite heart, orb, health thingy
     //public Image[] orbs = new Image[healthArrayLenght];
@@ -47,7 +49,8 @@ public class HealthUI : MonoBehaviour {
 
     void Update() {
         healthCounter = SpaceShip.health;
-        healthText.text = "Lives: " + healthCounter.ToString();
+        // commented out in favor of extraHealthUI.cs
+        //healthText.text = "Lives: " + healthCounter.ToString();
         //print("fuck");
 
         // the for loop is there to make this run for as much health as we have in the array
