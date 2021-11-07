@@ -67,25 +67,31 @@ public class Enemy : MonoBehaviour
         }
         
     }
+    //If the enemies collides with the bosses laser they die without dropping items or giving points Elio
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Laser")
         {
-            Die();
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
-    void Die(){
-        if((int)Random.Range(0,4)==0){
+    void Die()
+    {
+        if((int)Random.Range(0,4)==0)
+        {
             Instantiate(battery,transform.position,Quaternion.identity);
             // one in 7  chance to spawn battery
         }
+        //If player doesnt have max power the enemies will drop power thingies Elio
         if(SpaceShip.PScore < 100)
         {
-            if((int)Random.Range(0,2)==0){
+            if((int)Random.Range(0,2)==0)
+            {
             // one in 4 (maybe change?) chance to spawn p-score (just the tiny one)
             Instantiate(pscore,transform.position,Quaternion.identity);
-        }
+            }
         }
         
         //transform.localScale += scaleChange;
@@ -103,9 +109,11 @@ public class Enemy : MonoBehaviour
     }
 
     // if they take damage, reduce health, if health at 0, die function. 
-    public void Damage(){
+    public void Damage()
+    {
         health--;
-        if(health == 0){
+        if(health == 0)
+        {
             Die();
         }
     }

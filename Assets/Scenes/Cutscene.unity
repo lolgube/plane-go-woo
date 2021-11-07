@@ -1265,11 +1265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textSpeed: 0.05
   entireText: You knew you had to stop her, the being that destroyed your home planet
-    which killed your whole family. The quite large (in height) and powerful Goddess
-    your people once worshipped and prayed for wealth and good land, your people
-    called her Astronova. An all powerful being with the temper as fragile as a war
-    hungry soldier simply seeking blood and chaos, now it is your job to put an end
-    to her blood thirsty wrath.
+    and killed your whole family. The quite large (in height) and powerful (in strength)
+    Goddess your people once worshipped and prayed for. Your people called her Astronova.
+    An all powerful being with a temper as fragile as a war hungry soldier, simply
+    seeking blood and chaos. Now it is your job to put an end to her bloodthirsty
+    wrath.
 --- !u!1 &1288659307
 GameObject:
   m_ObjectHideFlags: 0
