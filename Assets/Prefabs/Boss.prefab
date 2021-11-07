@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7646562290826355422}
   - component: {fileID: 927821123810204617}
-  - component: {fileID: 444845414}
   - component: {fileID: 444845411}
   - component: {fileID: 444845415}
+  - component: {fileID: 444845414}
   - component: {fileID: 2807025323376325283}
   - component: {fileID: 267153720}
   m_Layer: 9
@@ -32,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 11}
   m_LocalScale: {x: 15, y: 15, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3601316540674127359}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,22 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &444845414
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206295183439237810}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0008202871, y: 0.25743788}
-  serializedVersion: 2
-  m_Radius: 0.05
 --- !u!95 &444845411
 Animator:
   serializedVersion: 3
@@ -144,6 +129,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &444845414
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206295183439237810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0008202871, y: 0.25743788}
+  serializedVersion: 2
+  m_Radius: 0.05
 --- !u!114 &2807025323376325283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,17 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831963fa497e19849ab10530ae304fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41, type: 3}
-  explosion: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41,
+  explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
     type: 3}
-  battery: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41, type: 3}
-  bulletColor: {r: 0, g: 0, b: 0, a: 0}
-  c: {fileID: 0}
-  xSpeed: 0
-  ySpeed: 0
-  canShoot: 0
-  bossHealth: 500
-  score: 0
+  battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
+  bossHealth: 1
+  score: 1000
   bossDeathAnimator: {fileID: 444845411}
 --- !u!114 &267153720
 MonoBehaviour:
@@ -205,16 +200,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 597149083235944548, guid: 7a08bc7749c290949843dd48a2441fad,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.212
-      objectReference: {fileID: 0}
-    - target: {fileID: 597149083235944548, guid: 7a08bc7749c290949843dd48a2441fad,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.212
       objectReference: {fileID: 0}
     - target: {fileID: 597149083235944548, guid: 7a08bc7749c290949843dd48a2441fad,
         type: 3}
@@ -271,6 +256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8195287988026935817, guid: 7a08bc7749c290949843dd48a2441fad,
+        type: 3}
+      propertyPath: bossDeathAnimator
+      value: 
+      objectReference: {fileID: 444845411}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a08bc7749c290949843dd48a2441fad, type: 3}
 --- !u!4 &3601316540674127359 stripped

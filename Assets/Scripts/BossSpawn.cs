@@ -6,7 +6,7 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
     public Transform Spawnpoint;
     public GameObject Prefab;
     public bool ShouldBossSpawn = false;
-    public int BossSpawned;
+    public int bossSpawned;
 
     
     // Start is called before the first frame update
@@ -30,13 +30,13 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
     }
     void bossSpawn()
     {
-       if(BossSpawned == 1) 
+       if(bossSpawned == 1) 
        {
             return; // Spawnar inte bossen om bossen redan är spawnad
        } 
         GameObject RigidPrefab;
         RigidPrefab = Instantiate(Prefab) as GameObject;
-        BossSpawned = 1;// Berättar för spelet att Bossen har Spawnat
+        bossSpawned = 1;// Berättar för spelet att Bossen har Spawnat
         
     }
 }

@@ -3638,7 +3638,7 @@ MonoBehaviour:
   Spawnpoint: {fileID: 1685023402}
   Prefab: {fileID: 206295183439237810, guid: 292458ae87c6f4745896035a394622ba, type: 3}
   ShouldBossSpawn: 0
-  BossSpawned: 0
+  bossSpawned: 0
 --- !u!4 &1685023402
 Transform:
   m_ObjectHideFlags: 0

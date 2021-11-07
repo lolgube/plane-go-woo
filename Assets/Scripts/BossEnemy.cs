@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
-    public GameObject bullet, explosion, battery;
-    public Color bulletColor;
-    // shooting position
-    public GameObject c;
+    public GameObject explosion, battery;
+    public bool bossDying;
 
-    // sets our x and y speed
-    public float xSpeed, ySpeed;
-    public bool canShoot;
+
     // sets boss health
-    public float bossHealth;
+    public int bossHealth;
     // how much score our enemies are worth
     public int score;
 
@@ -22,33 +18,34 @@ public class BossEnemy : MonoBehaviour
     
     void Start()
     {
-      boss =  GetComponent<BossSpawn>();
+        bossDying = false;
+        boss =  GetComponent<BossSpawn>();
     }
-    void Die()
+    void Update()
     {
-        print("MAMMAMAMAMAMAMA");
-        if ((int)Random.Range(0, 5) == 0)
+        if (bossHealth == 0 && bossDying == false)
         {
-            Instantiate(battery, transform.position, Quaternion.identity);
-            // one in six chance to spawn battery
+            StartCoroutine(BossDie());
+            bossDying = true;
         }
+    }
+    IEnumerator BossDie()
+    {
+        bossDeathAnimator.SetBool("BossDeath", true);
+        yield return new WaitForSecondsRealtime(2f);
+        //Spawns a battery when boss dies
+        Instantiate(battery, transform.position, Quaternion.identity);
+
         // plays our explosion particle effect
         Instantiate(explosion, transform.position, Quaternion.identity);
-        // die
-        Destroy(gameObject);
+
         // adds score onto our score variable using playerprefs
         // playerprefs is handy cause it saves it onto the computer and not just the current session
         // actually this is dumb and useless, but it works.
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
-        boss.BossSpawned = 0;
-        print("BossDed");
-
-        if (bossHealth == 0)
-        {
-            bossDeathAnimator.SetBool("BossDeath", true);
-            print("Bosshealth == 0");
-            Die();
-        }
+        // die
+        Destroy(gameObject);
+        
 
         // maybe play a sound?
     }

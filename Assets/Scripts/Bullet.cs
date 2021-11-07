@@ -52,8 +52,10 @@ public class Bullet : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col){
         
         // if bullets hit enemy
-        if(dir==1){
-            if(col.gameObject.tag=="Enemy"){
+        if(dir==1)
+        {
+            if(col.gameObject.tag=="Enemy")
+            {
                 col.gameObject.GetComponent<Enemy>().Damage();
                 
             
@@ -61,25 +63,27 @@ public class Bullet : MonoBehaviour {
 
                 Destroy(gameObject);
             }
-            // if bullets are going down & hit player
-        }else{
-            if(col.gameObject.tag=="Player"){
+        }
+        // if bullets are going down & hit player
+        else
+        {
+            if(col.gameObject.tag=="Player")
+            {
                 col.gameObject.GetComponent<SpaceShip>().Damage();
             
                 // add sound or particle effect (or something) here
 
                 Destroy(gameObject); 
             }
-            
-            if (col.gameObject.tag == "BossEnemy")
+        }
+        if (col.gameObject.tag == "BossEnemy")
             {
+                
                 col.gameObject.GetComponent<BossEnemy>().Damage();
 
                 // add sound or particle effect (or something) here
 
                 Destroy(gameObject);
             }
-            
-        }
     }
 }

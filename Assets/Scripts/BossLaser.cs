@@ -57,6 +57,7 @@ public class BossLaser : MonoBehaviour
         //Waits for 4 seconds
         yield return new WaitForSecondsRealtime(4f);
 
+        //Does attack animation
         bossAnimator.SetBool("BossAttackAnimation", true);
         //Spawns on of two different laserwallattacks in the same x position as the attack warning
         if(chooseLaser == 1)
