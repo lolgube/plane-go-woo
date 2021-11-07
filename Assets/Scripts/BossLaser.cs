@@ -16,7 +16,7 @@ public class BossLaser : MonoBehaviour
     public int chooseLaser;
 
 
-    //Creates array for x position
+    //Creates array for x position and choosing different thin lasers
     public GameObject[] thinLaser;
     public int[] warningPosition;
 
@@ -25,7 +25,8 @@ public class BossLaser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        bossAnimator.SetBool("BossAttackAnimation", false);
+        spawningAttack = false;
     }
 
     // Update is called once per frame
@@ -53,16 +54,17 @@ public class BossLaser : MonoBehaviour
         //Randomly chooses which of the lasers that will spawn
         chooseLaser = Random.Range(0, 2);
         //Spawns an attack warning randomly in one of three positions
-        GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
+        Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
         //Waits for 4 seconds
         yield return new WaitForSecondsRealtime(4f);
 
         //Does attack animation
         bossAnimator.SetBool("BossAttackAnimation", true);
-        //Spawns on of two different laserwallattacks in the same x position as the attack warning
+        //Spawns one of two different laserwallattacks in the same x position as the attack warning
         if(chooseLaser == 1)
         {
             GameObject thickLaserClone = Instantiate(thickLaserWall, new Vector3(warningPosition[wallXPositionRandom], 20, 1), Quaternion.identity);
+            //Makes it so that if the boss attacks in the middle it will use a short attack instead of the big one since the big laser one can collide with the bosses hitbox
             if(wallXPositionRandom == 1)
             {
                 Destroy(thickLaserClone);
@@ -73,8 +75,7 @@ public class BossLaser : MonoBehaviour
         {
             Instantiate(thinLaser[wallXPositionRandom]); 
         }
-        //Destroys attack warning
-        Destroy(warning);
+        //Ends the attack animation after two seconds
         yield return new WaitForSecondsRealtime(2);
         bossAnimator.SetBool("BossAttackAnimation", false);
 

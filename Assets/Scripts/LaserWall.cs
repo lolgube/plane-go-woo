@@ -33,7 +33,7 @@ public class LaserWall : MonoBehaviour
         }
 
 
-
+        //Destroys laserwall after two seconds
         Destroy(gameObject, 2);
     }
 }
