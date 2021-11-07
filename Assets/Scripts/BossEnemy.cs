@@ -13,13 +13,12 @@ public class BossEnemy : MonoBehaviour
     // how much score our enemies are worth
     public int score;
 
-    BossSpawn boss;
     public Animator bossDeathAnimator;
     
     void Start()
     {
         bossDying = false;
-        boss =  GetComponent<BossSpawn>();
+        GetComponent<BossSpawn>();
     }
     void Update()
     {
@@ -43,6 +42,9 @@ public class BossEnemy : MonoBehaviour
         // playerprefs is handy cause it saves it onto the computer and not just the current session
         // actually this is dumb and useless, but it works.
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
+
+        //Makes it so that another boss can spawn
+        BossSpawn.bossSpawned = 0;
         // die
         Destroy(gameObject);
         

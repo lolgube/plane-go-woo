@@ -7,18 +7,22 @@ public class DestroyWarning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<BossSpawn>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        StartCoroutine(DestroyWarningSoon());
+        //Makes it so that warning is destroyed in time with the boss if the boss dies
+        if (BossSpawn.bossSpawned == 0)
+        {
+            StartCoroutine(DestroyWarningSoon());
+        }
     }
     IEnumerator DestroyWarningSoon()
     {
-        yield return new WaitForSecondsRealtime(4f);
+        //Destroys the attack warning
+        yield return new WaitForSecondsRealtime(2f);
         Destroy(gameObject);
     }
 }

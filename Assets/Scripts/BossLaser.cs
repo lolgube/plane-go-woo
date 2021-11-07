@@ -54,7 +54,7 @@ public class BossLaser : MonoBehaviour
         //Randomly chooses which of the lasers that will spawn
         chooseLaser = Random.Range(0, 2);
         //Spawns an attack warning randomly in one of three positions
-        Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
+        GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
         //Waits for 4 seconds
         yield return new WaitForSecondsRealtime(4f);
 
@@ -75,7 +75,8 @@ public class BossLaser : MonoBehaviour
         {
             Instantiate(thinLaser[wallXPositionRandom]); 
         }
-        //Ends the attack animation after two seconds
+        //Destroys attack warning and ends the attack animation after two seconds
+        Destroy(warning);
         yield return new WaitForSecondsRealtime(2);
         bossAnimator.SetBool("BossAttackAnimation", false);
 

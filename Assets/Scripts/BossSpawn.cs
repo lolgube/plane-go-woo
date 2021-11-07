@@ -6,7 +6,7 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
     public Transform Spawnpoint;
     public GameObject Prefab;
     public bool ShouldBossSpawn = false;
-    public int bossSpawned;
+    public static int bossSpawned;
 
     
     // Start is called before the first frame update
