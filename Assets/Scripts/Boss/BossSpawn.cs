@@ -42,7 +42,7 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
                barScore = PlayerPrefText.score - bossScoreSpawner;
            }*/
         barScore = PlayerPrefText.score;//sätter slidern till värdet av score -Alfred
-        if (barScore == 10000)
+        if (barScore >= 10000)
         {
             ScoreBar.SetActive(false);//tar bort baren om bossen spawnar-Alfred 
             //Instantiate(explosion,transform.position,Quaternion.identity);
