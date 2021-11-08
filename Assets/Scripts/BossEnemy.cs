@@ -8,18 +8,19 @@ public class BossEnemy : MonoBehaviour
     public GameObject explosion, battery;
     public static bool bossDying;
 
-
     // sets boss health
     public int bossHealth;
     // how much score our enemies are worth
     public int score;
 
     public Animator bossDeathAnimator;
+    public BossSpawnBar bar;
     
     void Start()
     {
         bossDying = false;
         GetComponent<BossSpawn>();
+       bar = GetComponent<BossSpawnBar>();
     }
     void Update()
     {
@@ -47,7 +48,8 @@ public class BossEnemy : MonoBehaviour
 
         //Makes another boss spawn when you gather 10000 points after bosses death 
         BossSpawn.bossScoreSpawner = PlayerPrefText.score + 10000;
-
+        //drar ner bossspawnslidern till början -Alfred
+       // bar.setScore(0);
         //Makes it so that another boss can spawn
         BossSpawn.bossSpawned = 0;
         // die

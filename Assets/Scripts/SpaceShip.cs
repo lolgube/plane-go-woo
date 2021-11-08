@@ -37,6 +37,7 @@ public class SpaceShip : MonoBehaviour
     int PScoreLost;
     //cameraShake script -ALfred
     public cameraShake cameraShake;
+    public BossSpawnBar bar;
 
     private void Awake() {
         // gets our rb
@@ -63,6 +64,7 @@ public class SpaceShip : MonoBehaviour
 
         // just so we can keep an eye on what the value originally was for the score menu
         startHealth = health;
+        bar.setScore(0);
     }
 
     void Update() {

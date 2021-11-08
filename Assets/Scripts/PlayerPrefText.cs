@@ -7,6 +7,7 @@ using TMPro;
 public class PlayerPrefText : MonoBehaviour
 {
     public static int score;
+    public BossSpawnBar bar;
     private void Awake()
     {
         score = 0;
@@ -17,7 +18,7 @@ public class PlayerPrefText : MonoBehaviour
     
 
     // gets our text, sets it as the playerpref "score"
-    private void Update() { 
+    public void Update() { 
         // get score
         score = PlayerPrefs.GetInt("Score");
 
@@ -30,5 +31,6 @@ public class PlayerPrefText : MonoBehaviour
             PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+ 1000);
             //print("ligma");
         }
+        //bar.setScore(score);
     }
 }

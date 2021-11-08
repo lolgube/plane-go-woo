@@ -7,15 +7,18 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
     public GameObject Prefab;
     public bool ShouldBossSpawn = false;
     public static int bossSpawned;
+     public BossSpawnBar bar;
+    public GameObject ScoreBar;
 
     public static int bossScoreSpawner;
-
+   public int barScore;
     
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<PlayerPrefText>(); // Hämta koden med poängen
         bossScoreSpawner = 10000;
+        barScore = 0;
     }
 
     // Update is called once per frame
@@ -33,11 +36,22 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
             }
 
         }
+        /*   if (bossSpawned == 1)
+           {
+               barScore = PlayerPrefText.score - bossScoreSpawner;
+           }*/
+        barScore = PlayerPrefText.score;//sätter slidern till värdet av score -Alfred
+        if (barScore == 10000)
+        {
+            ScoreBar.SetActive(false);//tar bort baren om bossen spawnar-Alfred 
+        }
         if(ShouldBossSpawn == true) // Om bossen borde spawna
         {
             bossSpawn(); // Spawna bossen
             
         }
+
+        bar.setScore(barScore);
     }
     void bossSpawn()
     {       

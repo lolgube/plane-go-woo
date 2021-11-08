@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
     public float fireRate, health;
     // how much score our enemies are worth
     public int score;
-   
+    public BossSpawn spawn;
+
 
 
 
@@ -104,7 +105,7 @@ public class Enemy : MonoBehaviour
             // playerprefs is handy cause it saves it onto the computer and not just the current session
             // actually this is dumb and useless, but it works.
             PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+score);
-
+            spawn.barScore += score;
             // maybe play a sound?
     }
 
