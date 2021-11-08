@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
 {
+    ///// credit
+    ///// originally written by mohammed and basically worked on by everybody since. 
+
+
     // these gameobjects stand for the places where we instantiate the bullets
     // see link https://i.imgur.com/wcJhsWM.png for context
     // level 1 and 3 is middle thingie
     // 2&3&4 A - B are the outer most shoot canons. 4A and 4B are the two middle-outer-canons. 
-    // i'm sorry for being so shit at naming stuff. - mohammed
-    // fyi to stop the header from appearing under every single gameobject we're splitting them up like that.
+    // i'm sorry for being so shit at naming stuff - mohammed
+    // to stop the header from appearing under every single gameobject we're splitting them up like that.
     [Header("These are all the gun-spawn-places")]
     public GameObject level1and3;
     public GameObject level2and3and4A,level2and3and4B,level4A, level4B;
 
-    float delay = 0;
     [Header("Here's the rest of our stuff.")]
+    float delay = 0;
     public GameObject bullet; 
     public GameObject spaceShipExplosion;
     public bool dead;
@@ -27,15 +31,13 @@ public class SpaceShip : MonoBehaviour
     //vector för animation
     public Vector2 direction;
 
-
     // this variable is supposed to be set at the main menu (or a scene before it)
     public static int health = 4, startHealth;
 
-    // p-score testing
     public static int PScore = 0;
     // how much pscore you lose on damage
     int PScoreLost;
-    //cameraShake script -ALfred
+    //cameraShake script -Alfred
     public cameraShake cameraShake;
     public BossSpawnBar bar;
 
@@ -45,7 +47,7 @@ public class SpaceShip : MonoBehaviour
 
         // finds the location of our cannons (bullet spawnpoints)
         // fuck me for naming these level instead of power - mohammed
-        // this code just finds the children for player_ship. again, shitty names
+        // this code just finds the children for the player_ship prefab. again, shitty names
         level1and3 = transform.Find("level1&3").gameObject;
         level2and3and4A = transform.Find("level2&3&4A").gameObject;
         level2and3and4B = transform.Find("level2&3&4B").gameObject;
@@ -69,6 +71,7 @@ public class SpaceShip : MonoBehaviour
 
     void Update() {
         //om man inte är död kan man göra saker- Alfred
+        // second condition is so that you can't move / shoot while paused - mohammed
         if (dead == false && PauseMenu.GameIsPaused == false)
         {
             // movement times our speed variable
@@ -143,6 +146,7 @@ public class SpaceShip : MonoBehaviour
             // makes us lose a random amount of p-score on hit (like 5-10)
             PScoreLost = Random.Range(5, 10);
             PScore -= PScoreLost;
+            // limits the score within 0-100
             PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
 
             // ow (turns em red on hit)
@@ -190,6 +194,7 @@ public class SpaceShip : MonoBehaviour
         // resets our delay AKA time since last shot.
         delay = 0;
 
+        // entire p-score system made by mohammed
         // how i want the bullet system to work
         // see image, https://i.imgur.com/QWt1ByP.png
         // actually adding one more lazer to 100 since it's going to be annoying otherwise

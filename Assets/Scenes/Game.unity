@@ -336,7 +336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -170.5, y: -49.839996}
+  m_AnchoredPosition: {x: -266, y: -55}
   m_SizeDelta: {x: 236.42, y: 26.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154322521
@@ -3775,7 +3775,6 @@ MonoBehaviour:
   ShouldBossSpawn: 0
   bar: {fileID: 154322522}
   ScoreBar: {fileID: 154322519}
-  barScore: 0
 --- !u!4 &1685023402
 Transform:
   m_ObjectHideFlags: 0

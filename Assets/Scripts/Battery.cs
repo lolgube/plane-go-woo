@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Battery : MonoBehaviour
 {
+    // written by mohammed, pretty sure it's unchanged
     AudioManager aM;
     Rigidbody2D rb;
     // sets our y speed

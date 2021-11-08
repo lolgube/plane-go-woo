@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // originally written by mohammed with lots of people jumping in and adding various lines.
+    // just look at the old project to compare what's been added. 
     Rigidbody2D rb;
     // first two are self explanatory, latter 2 are health drops and power-up-drops 
     public GameObject bullet,explosion,battery,pscore;
@@ -11,17 +13,12 @@ public class Enemy : MonoBehaviour
     // shooting position
     public GameObject c;
 
-    // sets our x and y speed
     public float xSpeed, ySpeed;
     public bool canShoot;
-    // sets our firerate and health
     public float fireRate, health;
     // how much score our enemies are worth
     public int score;
-    public BossSpawn spawn;
-
-
-
+    //public BossSpawn spawn;
 
     // gets our rb
     void Awake() {
@@ -29,7 +26,6 @@ public class Enemy : MonoBehaviour
     }
 
     void Start() {
-        // destroys the enemy after a certain amount of itme
         Destroy(gameObject,32);
 
         // if we can't shoot, piss off
@@ -46,9 +42,6 @@ public class Enemy : MonoBehaviour
             // will repeat the function called Shoot for firerate seconds every firerate
             InvokeRepeating("Shoot",fireRate,fireRate);
             }
-  
-        
-
     }
 
     void Update() {
@@ -68,7 +61,7 @@ public class Enemy : MonoBehaviour
         }
         
     }
-    //If the enemies collides with the bosses laser they die without dropping items or giving points Elio
+    //If the enemies collides with the bosses laser they die without dropping items or giving points - Elio
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Laser")
@@ -78,18 +71,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die()
-    {
-        if((int)Random.Range(0,4)==0)
-        {
+    void Die() {
+        if((int)Random.Range(0,4)==0) {
             Instantiate(battery,transform.position,Quaternion.identity);
             // one in 7  chance to spawn battery
         }
-        //If player doesnt have max power the enemies will drop power thingies Elio
-        if(SpaceShip.PScore < 100)
-        {
-            if((int)Random.Range(0,2)==0)
-            {
+        //If player doesnt have max power the enemies will drop power thingies - Elio
+        if(SpaceShip.PScore < 100) {
+            if((int)Random.Range(0,2)==0) {
             // one in 4 (maybe change?) chance to spawn p-score (just the tiny one)
             Instantiate(pscore,transform.position,Quaternion.identity);
             }
@@ -105,16 +94,14 @@ public class Enemy : MonoBehaviour
             // playerprefs is handy cause it saves it onto the computer and not just the current session
             // actually this is dumb and useless, but it works.
             PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+score);
-            spawn.barScore += score;
+            BossSpawn.barScore += score;
             // maybe play a sound?
     }
 
     // if they take damage, reduce health, if health at 0, die function. 
-    public void Damage()
-    {
+    public void Damage(){
         health--;
-        if(health == 0)
-        {
+        if(health == 0){
             Die();
         }
     }

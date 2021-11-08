@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // just to make sure our explosion particle emmiters don't linger after they're done
+// mohammed
 
 public class DestroySelf : MonoBehaviour
 {

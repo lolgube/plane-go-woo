@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// written by mohammed, wasn't changed in this project (i think?)
+
 public class DeathManager : MonoBehaviour
 {
     GameObject player;
     bool gameOver = false;
 
-    // Start is called before the first frame update
     void Start() {
         // gets our player
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update() {
         // if our player is dead and game over isn't true (we don't want it to keep repeating)
         if(player==null&&!gameOver){

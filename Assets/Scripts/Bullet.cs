@@ -35,12 +35,10 @@ public class Bullet : MonoBehaviour {
     void Update()
     {
         //om skottet åker neråt(fienden som skuter) så åker den helften så snabbt- Alfred
-        if (dir <=0)
-        {
+        if (dir <=0) {
             rb.velocity = new Vector2(0, 5 * dir);
         }
-        else if (dir >= 0)//om skottet åker uppåt(spelaren som skuter) så åker den i normal hastighet- Alfred
-        {
+        else if (dir >= 0){ //om skottet åker uppåt(spelaren som skuter) så åker den i normal hastighet- Alfred
             rb.velocity = new Vector2(0, 10 * dir);
         }
         
@@ -56,48 +54,33 @@ public class Bullet : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col){
 
         //Every ten bullets that hit some sort of enemy will create an explosion Elio
-        if(col.gameObject.tag == "BossEnemy")
-        {
+        if(col.gameObject.tag == "BossEnemy") {
             bulletJuice++;
-            if(bulletJuice == 10)
-            {
+            if(bulletJuice == 10) {
             Instantiate(explosion, transform.position, Quaternion.identity);
             bulletJuice = 0;
             }
         }
         
         // if bullets hit enemy
-        if(dir==1)
-        {
-            if(col.gameObject.tag=="Enemy")
-            {
+        if(dir==1) {
+            if(col.gameObject.tag=="Enemy") {
                 col.gameObject.GetComponent<Enemy>().Damage();
-                
-            
                 // add sound or particle effect (or something) here
-
                 Destroy(gameObject);
             }
         }
         // if bullets are going down & hit player
-        else
-        {
-            if(col.gameObject.tag=="Player")
-            {
+        else {
+            if(col.gameObject.tag=="Player") {
                 col.gameObject.GetComponent<SpaceShip>().Damage();
-            
                 // add sound or particle effect (or something) here
-
                 Destroy(gameObject); 
             }
         }
-        if (col.gameObject.tag == "BossEnemy")
-            {
-                
+        if (col.gameObject.tag == "BossEnemy") {
                 col.gameObject.GetComponent<BossEnemy>().Damage();
-
                 // add sound or particle effect (or something) here
-
                 Destroy(gameObject);
             }
     }

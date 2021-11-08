@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds; // det h�r �r en lista som ska ineh�lla ljudfiler fr�n sound scriptet - Marcus.
+    public Sound[] sounds; // det här är en lista som ska inehålla ljudfiler från sound scriptet - Marcus.
 
     // Start is called before the first frame update
     void Awake()

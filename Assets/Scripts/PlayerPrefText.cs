@@ -8,14 +8,10 @@ public class PlayerPrefText : MonoBehaviour
 {
     public static int score;
     public BossSpawnBar bar;
-    private void Awake()
-    {
+
+    private void Awake() {
         score = 0;
     }
-    // why is this here??  (think it not being here broke something before so just ignore it i guess)
-    //public string name;
-
-    
 
     // gets our text, sets it as the playerpref "score"
     public void Update() { 
