@@ -24,7 +24,7 @@ public class SpaceShip : MonoBehaviour
     public GameObject spaceShipExplosion;
     public bool dead;
     Rigidbody2D rb;
-    public float speed;
+    float speed;
     AudioManager aM;
     //animatorn
     public Animator animator;
@@ -132,7 +132,7 @@ public class SpaceShip : MonoBehaviour
             animator.SetFloat("Vertical", direction.y);
             //Setter parametern speed till hastigheten man rör sig längst direction-Alfred
             animator.SetFloat("Speed", direction.sqrMagnitude);
-            animator.SetFloat("Power", PScore);
+            animator.SetFloat("Power", PScore);//parameter som använder PScore för att veta när den ska ändra utséende till det större skäppet. Gränsen ändras i animatorn.
         }
     }
 
@@ -205,6 +205,7 @@ public class SpaceShip : MonoBehaviour
             Instantiate(bullet, level4B.transform.position, Quaternion.identity);
             // maybe remove this one later
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
+            speed = 75;// desto bettre vapen du får desto långsammare blir du(för att du blir tyngre) -Alfred
         }
         // if pewpew is over 75, shoot four pewpew
         else if (PScore >= 75) {
@@ -212,6 +213,7 @@ public class SpaceShip : MonoBehaviour
             Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
             Instantiate(bullet, level4A.transform.position, Quaternion.identity);
             Instantiate(bullet, level4B.transform.position, Quaternion.identity);
+            speed = 85;// desto bettre vapen du får desto långsammare blir du(för att du blir tyngre) -Alf
         }
         // if pscore is more than or equal to 50, shoot three pewpew
         // ADD visual difference here or above
@@ -219,15 +221,18 @@ public class SpaceShip : MonoBehaviour
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
             Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
             Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
+            speed = 90;// desto bettre vapen du får desto långsammare blir du(för att du blir tyngre) -Alf
         }
         // if pscore is more than or equal 25, shoot two pewpew
         else if (PScore >= 25) {
             Instantiate(bullet, level2and3and4A.transform.position, Quaternion.identity);
             Instantiate(bullet, level2and3and4B.transform.position, Quaternion.identity);
+            speed = 95;// desto bettre vapen du får desto långsammare blir du(för att du blir tyngre) -Alf
         }
         // if pscore is less than 25, shoot one pewpew
         if (PScore < 25) {
             Instantiate(bullet, level1and3.transform.position, Quaternion.identity);
+            speed = 95;// desto bettre vapen du får desto långsammare blir du(för att du blir tyngre) -Alf
         }
     }
 }

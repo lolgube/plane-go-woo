@@ -37,23 +37,27 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin och Elio
             }
 
         }
-        /*   if (bossSpawned == 1)
-           {
-               barScore = PlayerPrefText.score - bossScoreSpawner;
-           }*/
-        barScore = PlayerPrefText.score;//sätter slidern till värdet av score -Alfred
-        if (barScore >= 10000)
+        /*   
+        if(PlayerPrefText.score <=10000)
         {
-            ScoreBar.SetActive(false);//tar bort baren om bossen spawnar-Alfred 
+            barScore = PlayerPrefText.score;//sätter slidern till värdet av score -Alfred
+        }else
+        {
+            barScore = PlayerPrefText.score - PlayerPrefText.score;//sätter slidern till värdet av score -Alfred
+        }*/
+       
+       /* if (barScore >= 10000)
+        {
+            barScore = 0;
+           // ScoreBar.SetActive(false);//tar bort baren om bossen spawnar-Alfred 
             //Instantiate(explosion,transform.position,Quaternion.identity);
-        }
+        }*/
         if(ShouldBossSpawn == true) // Om bossen borde spawna
         {
             bossSpawn(); // Spawna bossen
             
         }
-
-        bar.setScore(barScore);
+        bar.setScore(barScore);//startar funktionen som ändrar sliderns värde till i det här fallet barScore. -Alfred
     }
     void bossSpawn()
     {       

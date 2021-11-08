@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public float fireRate, health;
     // how much score our enemies are worth
     public int score;
-    //public BossSpawn spawn;
+    public BossSpawn spawn;
 
     // gets our rb
     void Awake() {
@@ -94,7 +94,7 @@ public class Enemy : MonoBehaviour
             // playerprefs is handy cause it saves it onto the computer and not just the current session
             // actually this is dumb and useless, but it works.
             PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+score);
-            BossSpawn.barScore += score;
+            BossSpawn.barScore += score;//ökar bossspawnslidern med lika mycket som playerscore.-Alfred
             // maybe play a sound?
     }
 

@@ -15,7 +15,7 @@ public class PåskÄgg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //om man trycker ner M,I,O så blir int mio 1 vilket startar ett easteregg
+        //om man trycker ner M,I,O i menyn så blir int mio 1 vilket startar ett easteregg
         if (Input.GetKey(KeyCode.M))
         {
             print("M");

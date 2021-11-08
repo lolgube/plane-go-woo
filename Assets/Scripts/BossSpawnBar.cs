@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class BossSpawnBar : MonoBehaviour
 {
-    public Slider slider;
+    public Slider slider;//vilken slider vi vill ska ändras
     
 
-    public void setScore(int score)
+    public void setScore(int score)//funktion med en int -Alfred
     {
-        slider.value = score;
+        slider.value = score;//sätter slidern på det värdet vi vill (score) - Alfred
     }
 }

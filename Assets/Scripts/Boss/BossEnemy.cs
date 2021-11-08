@@ -45,11 +45,10 @@ public class BossEnemy : MonoBehaviour
         // playerprefs is handy cause it saves it onto the computer and not just the current session
         // actually this is dumb and useless, but it works.
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
-
+        BossSpawn.barScore = score; //sätter spawnslidern på den poängen man får av att döda bossen. (Den nållställs inför nästa boss)-Alfred
         //Makes another boss spawn when you gather 10000 points after bosses death 
         BossSpawn.bossScoreSpawner = PlayerPrefText.score + 10000;
-        //drar ner bossspawnslidern till början -Alfred
-       // bar.setScore(0);
+
         //Makes it so that another boss can spawn
         BossSpawn.bossSpawned = 0;
         // die
