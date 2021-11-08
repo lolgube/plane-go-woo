@@ -12,6 +12,10 @@ public class Bullet : MonoBehaviour {
     // to keep track of if our bullet is going up or down
     int dir = 1;
 
+    //For juicing up the bullet attacks Elio
+    public static int bulletJuice = 0;
+    public GameObject explosion;
+
     // gets our rb
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -50,6 +54,17 @@ public class Bullet : MonoBehaviour {
 
     // this is where the bullet collision stuff is
     void OnTriggerEnter2D(Collider2D col){
+
+        //Every ten bullets that hit some sort of enemy will create an explosion Elio
+        if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "BossEnemy")
+        {
+            bulletJuice++;
+            if(bulletJuice == 10)
+            {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            bulletJuice = 0;
+            }
+        }
         
         // if bullets hit enemy
         if(dir==1)

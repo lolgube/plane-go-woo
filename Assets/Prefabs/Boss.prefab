@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831963fa497e19849ab10530ae304fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
+  explosion: {fileID: 1201682332511809364, guid: c00bf75730b0a264e8da22453038f6a0,
     type: 3}
   battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
   bossHealth: 1000
