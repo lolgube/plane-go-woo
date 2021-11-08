@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
+public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin och Elio
 {
     public Transform Spawnpoint;
     public GameObject Prefab;
