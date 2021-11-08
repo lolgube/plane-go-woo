@@ -293,12 +293,6 @@ Canvas:
   m_SortingLayerID: 1488140017
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!95 &126475886 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9074229726650087051, guid: ab3010d407f405042a1d201f9e54d572,
-    type: 3}
-  m_PrefabInstance: {fileID: 6658933789784615718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &154322519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,17 +4677,6 @@ PrefabInstance:
       propertyPath: bar
       value: 
       objectReference: {fileID: 154322522}
-    - target: {fileID: 6658933788531523387, guid: ab3010d407f405042a1d201f9e54d572,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 2536836658375905615, guid: 63a590dee0d885944a793b5f80670091,
-        type: 3}
-    - target: {fileID: 6658933788531523387, guid: ab3010d407f405042a1d201f9e54d572,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 126475886}
     - target: {fileID: 6658933788531523387, guid: ab3010d407f405042a1d201f9e54d572,
         type: 3}
       propertyPath: cameraShake

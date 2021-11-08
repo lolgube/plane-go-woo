@@ -5066,10 +5066,11 @@ MonoBehaviour:
   bullet: {fileID: 2536836658375905615, guid: 63a590dee0d885944a793b5f80670091, type: 3}
   spaceShipExplosion: {fileID: 4828790253475842759}
   dead: 0
-  speed: 85
-  animator: {fileID: 0}
+  speed: 95
+  animator: {fileID: 9074229726650087051}
   direction: {x: 0, y: 0}
   cameraShake: {fileID: 0}
+  bar: {fileID: 0}
 --- !u!50 &6658933788531523385
 Rigidbody2D:
   serializedVersion: 4

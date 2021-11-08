@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 // by mohammed
 
-// Scene build index.
-// main menu (0)
-// elins animation scen(1)
-// level1(2)
-// endanimation(3)
-// level0(5)
-
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
@@ -33,13 +26,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
 
-        // // enable movement script
-        // GameObject vargameobject = GameObject.Find("player9308");
-        // vargameobject.GetComponent<movment2>().enabled = true;
-        
-        // // enable sword script
-        // GameObject _vargameobject = GameObject.Find("GameObject (2)");
-        // _vargameobject.GetComponent<sword>().enabled = true;
         GameIsPaused = false;
     }
 
@@ -48,13 +34,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
 
-        // // disable movement script
-        // GameObject vargameobject = GameObject.Find("player9308");
-        // vargameobject.GetComponent<movment2>().enabled = false;
-
-        // // disable sword script
-        // GameObject _vargameobject = GameObject.Find("GameObject (2)");
-        // _vargameobject.GetComponent<sword>().enabled = false;
         GameIsPaused = true;
     }
 
@@ -66,6 +45,7 @@ public class PauseMenu : MonoBehaviour
 
 // return to main menu
     public void LoadMenu(){
+        GameIsPaused = false;
         Debug.Log ("Loading menu");
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
