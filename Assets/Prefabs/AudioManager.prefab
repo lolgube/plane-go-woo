@@ -46,6 +46,6 @@ MonoBehaviour:
   sounds:
   - name: Health Pickup
     clip: {fileID: 8300000, guid: a8b9f503b941ecf4eaf77269d1477d16, type: 3}
-    volume: 1
+    volume: 0.16
     pitch: 1
     source: {fileID: 0}
