@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Elio
 public class BossEnemy : MonoBehaviour
 {
     public GameObject explosion, battery;
@@ -43,6 +44,9 @@ public class BossEnemy : MonoBehaviour
         // playerprefs is handy cause it saves it onto the computer and not just the current session
         // actually this is dumb and useless, but it works.
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
+
+        //Makes another boss spawn when you gather 10000 points after bosses death 
+        BossSpawn.bossScoreSpawner = PlayerPrefText.score + 10000;
 
         //Makes it so that another boss can spawn
         BossSpawn.bossSpawned = 0;

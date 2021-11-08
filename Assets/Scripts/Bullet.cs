@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col){
 
         //Every ten bullets that hit some sort of enemy will create an explosion Elio
-        if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "BossEnemy")
+        if(col.gameObject.tag == "BossEnemy")
         {
             bulletJuice++;
             if(bulletJuice == 10)

@@ -8,7 +8,7 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
     public bool ShouldBossSpawn = false;
     public static int bossSpawned;
 
-    public int bossScoreSpawner;
+    public static int bossScoreSpawner;
 
     
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class BossSpawn : MonoBehaviour //Kodad av Marcus Kjellin
         if (PlayerPrefText.score >= bossScoreSpawner) //Om poängen är över bossScoreSpawner
         {
             //Makes it so that boss is spawned every 10000 points
-            bossScoreSpawner = bossScoreSpawner + 10000;
+            bossScoreSpawner = PlayerPrefText.score + 10000;
             //Wont spawn the boss if the points are over 10000 more than bossScoreSpawner
             //This makes it so that a lot of bosses wont spawn at once if you build up your score without killing the boss
             if(PlayerPrefText.score <= bossScoreSpawner + 10000)
