@@ -14,7 +14,7 @@ public class DestroyWarning : MonoBehaviour
     void Update()
     {
         //Makes it so that warning is destroyed in time with the boss if the boss dies
-        if (BossEnemy.bossDying == true)
+        if (BossEnemy.bossDying == true && PauseMenu.GameIsPaused == false)
         {
             StartCoroutine(DestroyWarningSoon());
         }

@@ -33,7 +33,7 @@ public class BossLaser : MonoBehaviour
     void Update()
     {
         //Checks if an attack is spawning
-        if (spawningAttack == false)
+        if (spawningAttack == false && PauseMenu.GameIsPaused == false)
         {
             //Spawns attack if no attack is already spawning
             StartCoroutine(BossLazerAttack());

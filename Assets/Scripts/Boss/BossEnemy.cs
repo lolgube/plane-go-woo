@@ -24,7 +24,7 @@ public class BossEnemy : MonoBehaviour
     }
     void Update()
     {
-        if (bossHealth <= 0 && bossDying == false)
+        if (bossHealth <= 0 && bossDying == false && PauseMenu.GameIsPaused == false)
         {
             StartCoroutine(BossDie());
             bossDying = true;
