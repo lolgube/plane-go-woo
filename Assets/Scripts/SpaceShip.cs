@@ -24,7 +24,8 @@ public class SpaceShip : MonoBehaviour
     public GameObject spaceShipExplosion;
     public bool dead;
     Rigidbody2D rb;
-    float speed;
+    // this float needs to be public. when it's private the spaceship doesn't move.. for some reason
+    public float speed;
     AudioManager aM;
     //animatorn
     public Animator animator;
@@ -113,16 +114,16 @@ public class SpaceShip : MonoBehaviour
             //print(delay);
             //print(health);
             // debug, might keep it in for luls
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                health++;
-            }
-            // also debug, keeping it in for the moment
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                PScore += 5;
-                PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
-            }
+            // if (Input.GetKeyDown(KeyCode.H))
+            // {
+            //     health++;
+            // }
+            // // also debug, keeping it in for the moment
+            // if (Input.GetKeyDown(KeyCode.J))
+            // {
+            //     PScore += 5;
+            //     PScore = Mathf.Clamp(SpaceShip.PScore, 0, 100);
+            // }
 
             //print("starthealth = " + startHealth);
             //print("health = " + health);

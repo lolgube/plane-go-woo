@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * detta är för att bossen ska skjuta
+ * detta Ã¤r fÃ¶r att bossen ska skjuta
  */
 public class BossLaser : MonoBehaviour
 {
@@ -54,18 +54,21 @@ public class BossLaser : MonoBehaviour
         //Randomly chooses which of the lasers that will spawn
         chooseLaser = Random.Range(0, 2);
         //Spawns an attack warning randomly in one of three positions
-        GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
+        if(PauseMenu.GameIsPaused == false){
+            GameObject warning = Instantiate(attackWarning, new Vector3(warningPosition[wallXPositionRandom], 0, 1), Quaternion.identity);
+            yield return new WaitForSecondsRealtime(4f);
+            Destroy(warning);
+        }
         //Waits for 4 seconds
-        yield return new WaitForSecondsRealtime(4f);
-
+        
         //Does attack animation
         bossAnimator.SetBool("BossAttackAnimation", true);
         //Spawns one of two different laserwallattacks in the same x position as the attack warning
-        if(chooseLaser == 1)
+        if(chooseLaser == 1 && PauseMenu.GameIsPaused == false)
         {
             GameObject thickLaserClone = Instantiate(thickLaserWall, new Vector3(warningPosition[wallXPositionRandom], 20, 1), Quaternion.identity);
             //Makes it so that if the boss attacks in the middle it will use a short attack instead of the big one since the big laser one can collide with the bosses hitbox
-            if(wallXPositionRandom == 1)
+            if(wallXPositionRandom == 1 && PauseMenu.GameIsPaused == false)
             {
                 Destroy(thickLaserClone);
                 Instantiate(thinLaser[wallXPositionRandom]);
@@ -76,7 +79,7 @@ public class BossLaser : MonoBehaviour
             Instantiate(thinLaser[wallXPositionRandom]); 
         }
         //Destroys attack warning and ends the attack animation after two seconds
-        Destroy(warning);
+        
         yield return new WaitForSecondsRealtime(2);
         bossAnimator.SetBool("BossAttackAnimation", false);
 
