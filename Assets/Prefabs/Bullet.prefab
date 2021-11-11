@@ -126,6 +126,7 @@ MonoBehaviour:
   bulletTimeLeftAlive: 1.25
   explosion: {fileID: 1642703199014021569, guid: 5a7df2ee76e1de542a5e55f1c5d5a395,
     type: 3}
+  friction: {fileID: 967548761157317051, guid: 591d8fe5c610a8b4f825fe2e89f4d08d, type: 3}
 --- !u!50 &111448537593012228
 Rigidbody2D:
   serializedVersion: 4

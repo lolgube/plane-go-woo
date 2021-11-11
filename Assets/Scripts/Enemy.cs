@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
     // if they take damage, reduce health, if health at 0, die function. 
     public void Damage(){
         health--;
-        if(health == 0){
+        if (health == 0){
             Die();
         }
     }

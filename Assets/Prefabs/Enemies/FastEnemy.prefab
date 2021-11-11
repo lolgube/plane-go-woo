@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
+  friction: {fileID: 0}
   explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
     type: 3}
   battery: {fileID: 4441312734472727258, guid: 4c7471e07d24c4e4bb25bdc4f802d439, type: 3}
@@ -266,6 +267,7 @@ MonoBehaviour:
   fireRate: 0
   health: 6
   score: 125
+  spawn: {fileID: 0}
 --- !u!95 &3355836513473881722
 Animator:
   serializedVersion: 3

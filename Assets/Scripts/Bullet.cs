@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour {
 
     //For juicing up the bullet attacks Elio
     public static int bulletJuice = 0;
-    public GameObject explosion;
+    public GameObject explosion, friction;
 
     // gets our rb
     void Awake() {
@@ -66,6 +66,7 @@ public class Bullet : MonoBehaviour {
         if(dir==1) {
             if(col.gameObject.tag=="Enemy") {
                 col.gameObject.GetComponent<Enemy>().Damage();
+                Instantiate(friction, transform.position, Quaternion.identity);
                 // add sound or particle effect (or something) here
                 Destroy(gameObject);
             }

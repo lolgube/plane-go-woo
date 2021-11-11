@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
+  friction: {fileID: 0}
   explosion: {fileID: 5978069263699004831, guid: ba4db5c0472db6944b4ebb0009b11fa3,
     type: 3}
   battery: {fileID: 5939819936301302609, guid: 76794b08e03648a4aa497ee42cf53a41, type: 3}
