@@ -653,7 +653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 321.36, y: -706}
+  m_AnchoredPosition: {x: 321.36, y: -772}
   m_SizeDelta: {x: 757.18, y: 139.39}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &884628224
@@ -1141,8 +1141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 36.900024, y: -33.200012}
-  m_SizeDelta: {x: 1326.1068, y: 633.6616}
+  m_AnchoredPosition: {x: 36.900024, y: -20.829987}
+  m_SizeDelta: {x: 1326.11, y: 697.57}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1288520627
 MonoBehaviour:
@@ -1201,8 +1201,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51
-  m_fontSizeBase: 51
+  m_fontSize: 46
+  m_fontSizeBase: 46
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -4
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -1263,13 +1263,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded6ac698fb072c4c89ed9be0897e1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 0.05
-  entireText: You knew you had to stop her, the being that destroyed your home planet
+  textSpeed: 0.04
+  entireText: "You knew you had to stop her, the being that destroyed your home planet
     and killed your whole family. The quite large (in height) and powerful (in strength)
-    Goddess your people once worshipped and prayed for. Your people called her Astronova.
-    An all powerful being with a temper as fragile as a war hungry soldier, simply
-    seeking blood and chaos. Now it is your job to put an end to her bloodthirsty
-    wrath.
+    Goddess your people once worshipped and prayed for. \n\nYour people called her
+    Astronova. \n\nAn all powerful being with a temper as fragile as a war hungry
+    soldier, simply seeking blood and chaos. \nIt's your job to put an end to her
+    bloodthirsty wrath."
 --- !u!1 &1288659307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,8 +1306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 1400, y: 700}
+  m_AnchoredPosition: {x: 0, y: 99.74}
+  m_SizeDelta: {x: 1400, y: 749.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288659309
 MonoBehaviour:
